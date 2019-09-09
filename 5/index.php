@@ -60,9 +60,9 @@
                 <input name="submit" type="submit" value="submit">
             </p>
         </form>
-        <hr>
         <?php
             if($_SERVER['REQUEST_METHOD'] == 'POST'){
+                $surname = $_POST['surname'];
                 $qs1 = $_POST['qs1'];
                 $qs2 = $_POST['qs2'];
                 $qs3 = $_POST['qs3'];
@@ -72,17 +72,22 @@
                 //Для вывода количества правильных ответов
                 if($qs1 == 'Integer'){
                     $result++;
-                }elseif ($qs2 == '7') {
+                }
+                if ($qs2 == '7') {
                     $result++;
-                }elseif ($qs3 == 'Язык программирования') {
+                }
+                if ($qs3 == 'Язык программирования') {
                     $result++;
-                }elseif ($qs4 == 'if') {
+                }
+                if ($qs4 == 'if') {
                     $result++;
-                }elseif ($qs5 == 'for($i = 0; $i > 10; $i++)' ) {
+                }
+                if ($qs5 == 'for($i = 0; $i > 10; $i++)' ) {
                     $result++;
                 }
             
             ?>
+            <p>Студент: <?php echo $surname;?></p>
             <table class="table col-md-6">
                 <thead>
                   <tr>
@@ -98,18 +103,29 @@
                     <td>Integer</td>
                   </tr>
                   <tr>
-                    <td>Какого типа переменная $a=5 ?</td>
-                    <td><?php echo $qs1; ?></td>
-                    <td>Integer</td>
+                    <td>Чему будет равен результат 18%11  ?</td>
+                    <td><?php echo $qs2; ?></td>
+                    <td>7</td>
                   </tr>
                   <tr>
-                    <td>Какого типа переменная $a=5 ?</td>
-                    <td><?php echo $qs1; ?></td>
-                    <td>Integer</td>
+                    <td>Что такое PHP ?</td>
+                    <td><?php echo $qs3; ?></td>
+                    <td>Язык программирования</td>
+                  </tr>
+                  <tr>
+                    <td>Оператор условия PHP </td>
+                    <td><?php echo $qs4; ?></td>
+                    <td>if</td>
+                  </tr>
+                  <tr>
+                    <td>Синтаксис оператора цикла FOR ?</td>
+                    <td><?php echo $qs5; ?></td>
+                    <td>for($i = 0; $i > 10; $i++)</td>
                   </tr>
                 </tbody>
             </table>
             <?php
+            echo 'Вы ответили правильно: ' . $result . ' раз';
             }
         ?>
     </body>
