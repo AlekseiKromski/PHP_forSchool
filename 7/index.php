@@ -12,8 +12,8 @@
                  <div class="form-group">
                     <label for="exampleInputEmail1">Title</label>
                     <br>
-                    <input type="radio" name='Mr' value='Mr'>Mr.
-                    <input type="radio" name='Mrs' class="radio_personal" value='Mrs'>Mrs.
+                    <input type="radio" name="gender" value='Mr'>Mr.
+                    <input type="radio" name="gender" class="radio_personal" value='Mrs'>Mrs.
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">First name *</label>

@@ -9,11 +9,7 @@ function print_data($data){
 
 //print_data($_POST);
 
-if($_POST['Mr'] == 'on'){
-    $gender = 'Mr';
-}else{
-    $gender = 'Mrs';
-}
+$gender = $_POST['gender'];
 $FirstName = $_POST['FirstName'];
 $LastName = $_POST['LastName'];
 $Email = $_POST['Email'];
@@ -28,11 +24,12 @@ $Date = $_POST['Data'];
     </head>
     <body>
         <div class="main_div2">
+            <h3>Gender: <?php echo $gender; ?></h3>
             <h3>First Name: <?php echo $FirstName; ?></h3>
             <h3>Last Name: <?php echo $LastName; ?></h3>
             <h3>Email: <?php echo $Email; ?></h3>
             <h3>Password: <?php echo $Password; ?></h3>
-            <h3>Date: <?php echo $Date; ?></h3>
+            <h3>Date: <?php echo $Date; ?></h3>   
         </div>
     </body>
 </html>
