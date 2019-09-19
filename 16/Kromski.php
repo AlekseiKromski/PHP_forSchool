@@ -28,8 +28,8 @@ require_once 'functions.php';
     			foreach ($arr as $value) {
     				$summ += $value;
     			}
-    			$result = $summ / round(count($arr),2);
-    			return $result;
+    			$result = $summ / count($arr);
+    			return round($result);
     		}
     		function FourthTask($arr){
     			foreach ($arr as $key => $value) {
@@ -77,7 +77,12 @@ require_once 'functions.php';
     					unset($arr[$key]);
     				}
     			}
-    			return $arr;
+				$summ = 0;
+    			foreach ($arr as $k => $v) {
+    				$summ += $v;
+    			}
+    			$result = $summ / count($arr);
+    			return 'Среднее арефм. без большего и меньшего = ' . round($result);
     		}
     		function EighthTask($arr){
     			asort($arr);
@@ -85,40 +90,52 @@ require_once 'functions.php';
 			    	echo "$key => $val" . "<br>";
 				}	 
     		}
-    		function TenthTask($arr){
+    		function NinthTask($arr){
     			arsort($arr);
     			foreach ($arr as $key => $val) {
-			    	echo "$key => $val" . "<br>";
+			echo 'Задание 1';	    	echo "$key => $val" . "<br>";
 				}	 
     		}
-    		
-	    	//Массивы
-    		$arr[0] = 'html';
-    		$arr[1] = 'css';
-    		//debug($arr);
-
-    		$arr2 = array('html','css','js');
-    		//debug($arr2);
-
-    		$arr3 = array('html' => '1','css' => '2','js'=>'3');
-    		//debug($arr3);
-
-    		$arr4 = array('html' => '1','css' => '2','js'=>'3','JQuery' => '4');
-    		unset($arr4['JQuery']); //Удаляем элемент массива
-    		foreach ($arr4 as $key => $value) {
-    			//echo $key . '<br>';
-    			//echo $value . '<br>';
-    		}
-
+			
+			echo '<h4>Задание 1</h4>';	    		
     		debug($arr = FirstTask());
-    		debug(SecondTask($arr)); // Вывод суммы всех элементов массива
+    		echo "<hr>";
+			
+			echo '<h4>Задание 2</h4>';	
+    		debug($arr);
+    		echo "<hr>";
+			
+			echo '<h4>Задание 3</h4>';	
+    		debug(SecondTask($arr)); // Вывод суммы всех элементов массив
+    		echo "<hr>";
+			
+			echo '<h4>Задание 4</h4>';	
     		debug(ThirdTask($arr)); //Вывод среднего арефметич. значения
+    		echo "<hr>";
+			
+			echo '<h4>Задание 5</h4>';	
 			debug(FourthTask($arr)); //Вывод только четных чисел
+			echo "<hr>";
+			
+			echo '<h4>Задание 6</h4>';	
 			debug(FirthTask($arr));
+			echo "<hr>";
+			
+			echo '<h4>Задание 7</h4>';	
 			debug(SixthTask($arr));
+			echo "<hr>";
+			
+			echo '<h4>Задание 8</h4>';	
 			debug(SeventhTask($arr));
+			echo "<hr>";
+			
+			echo '<h4>Задание 9</h4>' . '<br>';	
 			debug(EighthTask($arr));
-			debug(TenthTask($arr));
+			echo "<hr>";
+			
+			echo '<h4>Задание 10</h4>' . '<br>';
+			debug(NinthTask($arr));
+			echo "<hr>";
     	?>
     </body>
 </html>
