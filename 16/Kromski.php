@@ -59,6 +59,39 @@ require_once 'functions.php';
     			}
     			return $result;
     		}
+    		function SeventhTask($arr){
+    			$max = 0;
+    			$min = 100;
+    			foreach ($arr as $key => $value) {
+    				if($value > $max){
+    					$max = $value;
+    				}
+    			}
+    			foreach ($arr as $key => $value) {
+    				if($value < $min){
+    					$mix = $value;
+    				}
+    			}
+    			foreach ($arr as $key => $value) {
+    				if($value == $max or $value == $mix){
+    					unset($arr[$key]);
+    				}
+    			}
+    			return $arr;
+    		}
+    		function EighthTask($arr){
+    			asort($arr);
+    			foreach ($arr as $key => $val) {
+			    	echo "$key => $val" . "<br>";
+				}	 
+    		}
+    		function TenthTask($arr){
+    			arsort($arr);
+    			foreach ($arr as $key => $val) {
+			    	echo "$key => $val" . "<br>";
+				}	 
+    		}
+    		
 	    	//Массивы
     		$arr[0] = 'html';
     		$arr[1] = 'css';
@@ -83,7 +116,9 @@ require_once 'functions.php';
 			debug(FourthTask($arr)); //Вывод только четных чисел
 			debug(FirthTask($arr));
 			debug(SixthTask($arr));
-
+			debug(SeventhTask($arr));
+			debug(EighthTask($arr));
+			debug(TenthTask($arr));
     	?>
     </body>
 </html>
