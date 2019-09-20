@@ -10,42 +10,36 @@ require_once 'functions.php';
     <body>
         <?php
             $arr = [
-                'Салат',
-                'Суп',
-                'Кола',
-                'Шаурма',
-                'Мiвина'
-            ];
-            $arr2 = [
                 'Салат' => 102,
-                'Суп' => 200,
-                'Кола' => 30,
-                'Шаурма' => 400,
-                'Мiвина' => 5
-            ];   
+                'Суп' => 360,
+                'Кола' => 75,
+                'Шаурма' => 300,
+                'Мiвина' => 13
+            ];
         ?>   
         <form method="post">
             <?php
-            foreach ($arr as $value) {
-                echo "{$value} <input type='radio' name='{$value}'><br>";
+            foreach ($arr as $key => $value) {
+                echo "{$key} <input type='radio' name='{$key}' value='{$value}'><br>";
             };
             ?>
-            <input type="submit">
-        <?php
-        debug($_POST);
-        $summ = 0;
-        if($_POST['Салат'] == 'on'){
-            $summ += $arr2['Салат'];
-        }elseif ($_POST['Суп'] == 'on') {
-            $summ += $arr2['Суп'];
-        }elseif ($_POST['Кола'] == 'on') {
-            $summ += $arr2['Кола'];
-        }elseif ($_POST['Шаурма'] == 'on') {
-            $summ += $arr2['Шаурма'];
-        }elseif ($_POST['Мiвина'] == 'on') {
-            $summ += $arr2['Мiвина'];
+            <input type="submit" value="Отправить">
+        <?php   
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            //debug($_POST);
+            $summ = 0;
+            foreach ($_POST as $key => $value) {
+                $summ += $value;
+            }
+            echo '<br><br>' . 'Общая сумма за обед: ' . "<b>{$summ}</b>";
+            $nalog = ($summ*20)/120;
+            $nalog2 = $summ - $nalog;
+            $nalog += $summ; 
+            $nalog = round($nalog,3);     
+            echo '<br>' . 'Сумма без налога: ' . "<b>{$nalog2}</b>";
+            echo '<br>' . 'Сумма с налогом: ' . "<b>{$nalog}</b>";
         }
-        echo $summ;
+
         ?>
         </form> 	
     </body>
