@@ -1,0 +1,34 @@
+table{
+    border: 5px solid black;
+   
+}
+td{
+    border: 1px solid black;
+
+}
+.main_div{
+    width: 39%;
+    margin-left: auto;
+    margin-right: auto;
+    background: whitesmoke;
+    padding: 4%;
+    margin-top: 7%;
+
+}
+.main_div h3{
+    text-transform: uppercase;   
+    text-align: center;
+}
+.radio_personal{
+    margin-left: 2%;
+}
+.main_div2{
+    width: 39%;
+    margin-left: 2%;
+    margin-top: 2%;
+
+}
+form{
+    background-color: red;
+    padding: 2%;
+}
