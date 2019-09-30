@@ -5,7 +5,7 @@
 			'price' => 1200,
 			'img' => 'iphone.png'
 		],
-		'smasung' => [
+		'samsung' => [
 			'desc' => 'Samsung, South Korean company that is one of the worlds largest producers of electronic devices. Samsung specializes in the production of a wide variety of consumer and industry electronics, including appliances',
 			'price' => 899,
 			'img' => 'samsung.jpg'
