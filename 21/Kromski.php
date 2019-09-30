@@ -11,15 +11,15 @@ require_once 'functions.php';
         <?php
         require_once "info.php";
         require_once "func.php";
-        debug($continent);
+        //debug($continent);
         echo "<a href='Kromski.php' style='color:red;'>Назад</a>";
         viewCountry($continent);
         echo "<br>";
         if(!empty($_GET['continent'])){
             showCountry($continent);
-            if(!empty($_GET['country'])){
-                showCountryInfo($continent);
-            }
+        }
+        if(!empty($_GET['country'])){
+            showCountryInfo($continent);
         }
         ?>
     </body>
