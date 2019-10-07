@@ -6,6 +6,15 @@ function viewMenu($arr){
 		echo " <a href='Kromski.php?category={$key}'>{$key}</a>";
 	}
 	echo "<form method='post'>Поиск по автору: <input type='search' name='search'><input type='submit' value='Поиск'></form>";
+	echo "<form method='post'>
+	<input type='text' name='user_price'>
+	<select name='user_price_variable'>
+        <option value='Smaller'>Меньше</option>
+        <option value='More'>Больше</option>
+    </select>
+    <input type='submit' value='Поиск'>
+	</form>";
+
 }
 function viewBook($arr){
 	if(empty($_GET['category'])){
