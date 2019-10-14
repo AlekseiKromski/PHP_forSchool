@@ -56,4 +56,13 @@ foreach ($weather as $key => $value) {
 	}
 }
 
-debug($weather); 
+debug($weather);
+foreach ($weather as $key => $value) {
+	foreach ($value as $key => $value) {
+		$str = $value . ',' . PHP_EOL;
+		echo $str;
+	} 
+	echo $str;
+	echo "<br>";
+} 
+
