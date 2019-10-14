@@ -73,11 +73,9 @@ require_once 'functions.php'; //for debuging array
 				    		$prav_otv++;
 				    	}
 			    	}
-			    	$str_otv = "Кол.-во правельных ответов {$_POST['name']}: " . $prav_otv;
+			    	$str_otv = "Кол.-во правельных ответов {$_POST['name']}: " . $prav_otv . PHP_EOL;
 			    	echo $str_otv;
-			    	$f = fopen("answer.txt", 'w');
-			    	fwrite($f, $str_otv);
-			    	fclose($f);
+			    	file_put_contents('answer.txt', $str_otv, FILE_APPEND); 
 
 			    }
 	    	?>
