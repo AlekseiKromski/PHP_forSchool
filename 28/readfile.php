@@ -111,116 +111,211 @@ function date_search($arr){
 	//echo $date . '<br>';
 	$mounth = substr($date, 0,7);
 	$mounth = substr($mounth, -2);
-	$day = substr($date,-2);	
+	$day = substr($date,-2);
 	echo "<div class='row'>";
 		foreach ($arr as $key => $value) {
 			if($mounth == '12'){
 				if($key == 'Декабрь'){
-					echo "<div class='col-md-6'>";
-					echo "<h4>{$key}</h4>";
-					echo "<p>Значения температур: {$value}</p>";
-					echo "<br>";
-					echo "</div>";
+					foreach ($value as $k => $v) {
+						if($day == $k){
+							echo "<div class='col-md-6'>";
+							echo "<h4>{$key}</h4>";
+							echo "<p>Значения температур: {$v}</p>";
+							echo "<br>";
+							echo "</div>";
+
+						}
+					}
 				}
 			}
 			if($mounth == '01'){
 				if($key == 'Январь'){
-					echo "<div class='col-md-6'>";
-					echo "<h4>{$key}</h4>";
-					echo "<p>Значения температур: {$value}</p>";
-					echo "<br>";
-					echo "</div>";
+					foreach ($value as $k => $v) {
+						if($day == $k){
+							echo "<div class='col-md-6'>";
+							echo "<h4>{$key}</h4>";
+							echo "<p>Значения температур: {$v}</p>";
+							echo "<br>";
+							echo "</div>";
+
+						}
+					}
 				}
 			}
 			if($mounth == '02'){
 				if($key == 'Февраль'){
-					echo "<div class='col-md-6'>";
-					echo "<h4>{$key}</h4>";
-					echo "<p>Значения температур: {$value}</p>";
-					echo "<br>";
-					echo "</div>";
+					foreach ($value as $k => $v) {
+						if($day == $k){
+							echo "<div class='col-md-6'>";
+							echo "<h4>{$key}</h4>";
+							echo "<p>Значения температур: {$v}</p>";
+							echo "<br>";
+							echo "</div>";
+
+						}
+					}foreach ($value as $k => $v) {
+						if($day == $k){
+							echo "<div class='col-md-6'>";
+							echo "<h4>{$key}</h4>";
+							echo "<p>Значения температур: {$v}</p>";
+							echo "<br>";
+							echo "</div>";
+
+						}
+					}
 				}
 			}
 			if($mounth == '03'){
 				if($key == 'Март'){
-					echo "<div class='col-md-6'>";
-					echo "<h4>{$key}</h4>";
-					echo "<p>Значения температур: {$value}</p>";
-					echo "<br>";
-					echo "</div>";
+					foreach ($value as $k => $v) {
+						if($day == $k){
+							echo "<div class='col-md-6'>";
+							echo "<h4>{$key}</h4>";
+							echo "<p>Значения температур: {$v}</p>";
+							echo "<br>";
+							echo "</div>";
+
+						}
+					}
 				}
 			}
 			if($mounth == '04'){
 				if($key == 'Апрель'){
-					echo "<div class='col-md-6'>";
-					echo "<h4>{$key}</h4>";
-					echo "<p>Значения температур: {$value}</p>";
-					echo "<br>";
-					echo "</div>";
+					foreach ($value as $k => $v) {
+						if($day == $k){
+							echo "<div class='col-md-6'>";
+							echo "<h4>{$key}</h4>";
+							echo "<p>Значения температур: {$v}</p>";
+							echo "<br>";
+							echo "</div>";
+
+						}
+					}
 				}
 			}
 			if($mounth == '05'){
 				if($key == 'Май'){
-					echo "<div class='col-md-6'>";
-					echo "<h4>{$key}</h4>";
-					echo "<p>Значения температур: {$value}</p>";
-					echo "<br>";
-					echo "</div>";
+					foreach ($value as $k => $v) {
+						if($day == $k){
+							echo "<div class='col-md-6'>";
+							echo "<h4>{$key}</h4>";
+							echo "<p>Значения температур: {$v}</p>";
+							echo "<br>";
+							echo "</div>";
+
+						}
+					}
 				}
 			}
 			if($mounth == '06'){
 				if($key == 'Июнь'){
-					echo "<div class='col-md-6'>";
-					echo "<h4>{$key}</h4>";
-					echo "<p>Значения температур: {$value}</p>";
-					echo "<br>";
-					echo "</div>";
+					foreach ($value as $k => $v) {
+						if($day == $k){
+							echo "<div class='col-md-6'>";
+							echo "<h4>{$key}</h4>";
+							echo "<p>Значения температур: {$v}</p>";
+							echo "<br>";
+							echo "</div>";
+
+						}
+					}foreach ($value as $k => $v) {
+						if($day == $k){
+							echo "<div class='col-md-6'>";
+							echo "<h4>{$key}</h4>";
+							echo "<p>Значения температур: {$v}</p>";
+							echo "<br>";
+							echo "</div>";
+
+						}
+					}
 				}
 			}
 			if($mounth == '07'){
 				if($key == 'Июль'){
-					echo "<div class='col-md-6'>";
-					echo "<h4>{$key}</h4>";
-					echo "<p>Значения температур: {$value}</p>";
-					echo "<br>";
-					echo "</div>";
+					foreach ($value as $k => $v) {
+						if($day == $k){
+							echo "<div class='col-md-6'>";
+							echo "<h4>{$key}</h4>";
+							echo "<p>Значения температур: {$v}</p>";
+							echo "<br>";
+							echo "</div>";
+
+						}
+					}foreach ($value as $k => $v) {
+						if($day == $k){
+							echo "<div class='col-md-6'>";
+							echo "<h4>{$key}</h4>";
+							echo "<p>Значения температур: {$v}</p>";
+							echo "<br>";
+							echo "</div>";
+
+						}
+					}
 				}
 			}
 			if($mounth == '08'){
 				if($key == 'Август'){
-					echo "<div class='col-md-6'>";
-					echo "<h4>{$key}</h4>";
-					echo "<p>Значения температур: {$value}</p>";
-					echo "<br>";
-					echo "</div>";
+					foreach ($value as $k => $v) {
+						if($day == $k){
+							echo "<div class='col-md-6'>";
+							echo "<h4>{$key}</h4>";
+							echo "<p>Значения температур: {$v}</p>";
+							echo "<br>";
+							echo "</div>";
+
+						}
+					}foreach ($value as $k => $v) {
+						if($day == $k){
+							echo "<div class='col-md-6'>";
+							echo "<h4>{$key}</h4>";
+							echo "<p>Значения температур: {$v}</p>";
+							echo "<br>";
+							echo "</div>";
+
+						}
+					}
 				}
 			}
 			if($mounth == '09'){
 				if($key == 'Сентябрь'){
-					echo "<div class='col-md-6'>";
-					echo "<h4>{$key}</h4>";
-					echo "<p>Значения температур: {$value}</p>";
-					echo "<br>";
-					echo "</div>";
+					foreach ($value as $k => $v) {
+						if($day == $k){
+							echo "<div class='col-md-6'>";
+							echo "<h4>{$key}</h4>";
+							echo "<p>Значения температур: {$v}</p>";
+							echo "<br>";
+							echo "</div>";
+
+						}
+					}
 				}
 			}
 			if($mounth == '10'){
 				if($key == 'Октябрь'){
-					echo "<div class='col-md-6'>";
-					echo "<h4>{$key}</h4>";
-					echo "<p>Значения температур: {$value}</p>";
-					echo "<br>";
-					echo "</div>";
+					foreach ($value as $k => $v) {
+						if($day == $k){
+							echo "<div class='col-md-6'>";
+							echo "<h4>{$key}</h4>";
+							echo "<p>Значения температур: {$v}</p>";
+							echo "<br>";
+							echo "</div>";
+
+						}
+					}
 				}
 			}
 			if($mounth == '11'){
 				if($key == 'Ноябрь'){
-					echo "<div class='col-md-6'>";
-					echo "<h4>{$key}</h4>";
-					echo "<p>Значения температур: {$value}</p>";
-					echo "<br>";
-					echo "</div>";
-				}
+					foreach ($value as $k => $v) {
+						if($day == $k){
+							echo "<div class='col-md-6'>";
+							echo "<h4>{$key}</h4>";
+							echo "<p>Значения температур: {$v}</p>";
+							echo "<br>";
+							echo "</div>";
+
+						}
+					}				}
 			}
 		}
 	echo "</div>";
