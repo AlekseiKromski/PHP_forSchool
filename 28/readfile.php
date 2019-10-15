@@ -261,7 +261,7 @@ function hold($arr){
 		}
 		foreach ($day as $key => $value) {
 			echo "<div class='col-md-6'>";
-			echo "<h4>Самые теплые температуры были в: </h4>";
+			echo "<h4>Самые низкие температуры были в: </h4>";
 			echo "<h5>{$key}</h5>";
 			echo "<p>Значения температур: $value</p>";
 			echo "<br>";
@@ -270,24 +270,26 @@ function hold($arr){
 	echo "</div>";
 }
 function sred($arr){
-	$max = 0;	
-	$day = [];
+	$sred_arr = [];
 	echo "<div class='row'>";
-		foreach ($arr as $key => $value) {
-			foreach ($value as $k => $v) {
-				if($v < $max){
-					$max = $v;
-					$day[$key] = $max;
-				}
-			}	
-		}
-		foreach ($day as $key => $value) {
-			echo "<div class='col-md-6'>";
-			echo "<h4>Самые теплые температуры были в: </h4>";
-			echo "<h5>{$key}</h5>";
-			echo "<p>Значения температур: $value</p>";
-			echo "<br>";
-		echo "</div>";
-		}
-	echo "</div>";
+			foreach ($arr as $key => $value) {
+				$sred = 0;
+				$count = count($value);
+				foreach ($value as $k => $v) {
+					$sred = $sred + $v;
+					
+				}	
+				$sred = $sred / $count;
+				$sred = round($sred,2);
+				$sred_arr[$key] = $sred;
+			}
+
+			foreach ($sred_arr as $key => $value) {
+				echo "<div class='col-md-6'>";
+				echo "<h5>{$key}</h5>";
+				echo "<p>Среднее значение температуры: $value</p>";
+				echo "<br>";
+			echo "</div>";
+			}
+	echo "</div>";	
 }
