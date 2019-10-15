@@ -43,7 +43,7 @@ foreach ($weather as $key => $value) {
 		
 	}elseif($key == 'Апрель' or $key == 'Июнь' or $key == 'Сентябрь' or $key == 'Ноябрь'){
 		if($key == 'Апрель' or $key == 'Июнь'){
-			for ($i=0; $i <= 31 ; $i++) { 
+			for ($i=0; $i <= 30 ; $i++) { 
 				$random = rand(0,25);
 				array_push($weather[$key], $random);
 			}
@@ -57,12 +57,16 @@ foreach ($weather as $key => $value) {
 }
 
 debug($weather);
+$str = '';
 foreach ($weather as $key => $value) {
+	$mounth = $key;
 	foreach ($value as $key => $value) {
-		$str = $value . ',' . PHP_EOL;
-		echo $str;
+		$str = $str . ' ' . $value;	
 	} 
+	$str = $mounth . " : " . $str . PHP_EOL;
+	file_put_contents('test.txt', $str,  FILE_APPEND);
 	echo $str;
+	$str = '';
 	echo "<br>";
 } 
 
