@@ -56,7 +56,6 @@ foreach ($weather as $key => $value) {
 	}
 }
 
-debug($weather);
 $str = '';
 foreach ($weather as $key => $value) {
 	$mounth = $key;
@@ -64,9 +63,7 @@ foreach ($weather as $key => $value) {
 		$str = $str . ' ' . $value;	
 	} 
 	$str = $mounth . " : " . $str . PHP_EOL;
-	file_put_contents('test.txt', $str,  FILE_APPEND);
-	echo $str;
+	file_put_contents('weather.txt', $str,  FILE_APPEND);
 	$str = '';
-	echo "<br>";
 } 
 
