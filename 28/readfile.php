@@ -7,7 +7,8 @@ foreach ($weather as $key => $value) {
 	$info[1] = preg_replace('/\s+/', ', ', $info[1]);
 	$info[1] = ltrim($info[1], ',');
 	$info[1] = rtrim($info[1], ', ');
-	$weather_list[$info[0]] = $info[1];	
+	$weather_list[$info[0]] = $info[1];
+	$weather_list2[$info[0]] = explode(',', $info[1]);	
 }
 function viewAllInfo($arr){
 	echo "<div class='row'>";
@@ -48,6 +49,10 @@ function viewMenu($arr){
 		echo "<input type='date' name='date_search'>";
 		echo "<button type='submit'>Найти</button>";
 	echo "</form>";
+	echo "<a href='weather.php?tepl=true'>Самая теплая температура</a><br>";
+	echo "<a href='weather.php?hold=true'>Самая низкая температура</a><br>";
+	echo "<a href='weather.php?sred=true'>Среднее значени по каждому месяцу</a>";
+
 }
 function viewMounthInfo($arr){
 	echo "<div class='row'>";
@@ -106,12 +111,11 @@ function date_search($arr){
 	//echo $date . '<br>';
 	$mounth = substr($date, 0,7);
 	$mounth = substr($mounth, -2);
-	$date = substr($date,-2);	
+	$day = substr($date,-2);	
 	echo "<div class='row'>";
 		foreach ($arr as $key => $value) {
 			if($mounth == '12'){
 				if($key == 'Декабрь'){
-					
 					echo "<div class='col-md-6'>";
 					echo "<h4>{$key}</h4>";
 					echo "<p>Значения температур: {$value}</p>";
@@ -218,6 +222,72 @@ function date_search($arr){
 					echo "</div>";
 				}
 			}
+		}
+	echo "</div>";
+}
+function tepl($arr){
+	$max = 0;	
+	$day = [];
+	echo "<div class='row'>";
+		foreach ($arr as $key => $value) {
+			foreach ($value as $k => $v) {
+				if($v > $max){
+					$max = $v;
+					$day[$key] = $max;
+				}
+			}	
+		}
+		foreach ($day as $key => $value) {
+			echo "<div class='col-md-6'>";
+			echo "<h4>Самые теплые температуры были в: </h4>";
+			echo "<h5>{$key}</h5>";
+			echo "<p>Значения температур: $value</p>";
+			echo "<br>";
+		echo "</div>";
+		}
+	echo "</div>";
+}
+function hold($arr){
+	$max = 0;	
+	$day = [];
+	echo "<div class='row'>";
+		foreach ($arr as $key => $value) {
+			foreach ($value as $k => $v) {
+				if($v < $max){
+					$max = $v;
+					$day[$key] = $max;
+				}
+			}	
+		}
+		foreach ($day as $key => $value) {
+			echo "<div class='col-md-6'>";
+			echo "<h4>Самые теплые температуры были в: </h4>";
+			echo "<h5>{$key}</h5>";
+			echo "<p>Значения температур: $value</p>";
+			echo "<br>";
+		echo "</div>";
+		}
+	echo "</div>";
+}
+function sred($arr){
+	$max = 0;	
+	$day = [];
+	echo "<div class='row'>";
+		foreach ($arr as $key => $value) {
+			foreach ($value as $k => $v) {
+				if($v < $max){
+					$max = $v;
+					$day[$key] = $max;
+				}
+			}	
+		}
+		foreach ($day as $key => $value) {
+			echo "<div class='col-md-6'>";
+			echo "<h4>Самые теплые температуры были в: </h4>";
+			echo "<h5>{$key}</h5>";
+			echo "<p>Значения температур: $value</p>";
+			echo "<br>";
+		echo "</div>";
 		}
 	echo "</div>";
 }

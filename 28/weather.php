@@ -17,6 +17,10 @@ require_once 'functions.php'; //for debuging array
 	    		viewMounthInfo($weather_list);
 	    	}elseif(isset($_GET['timeOfYear_search'])){
 	    		viewTimeOfYearhInfo($weather_list);
+	    	}elseif(isset($_GET['tepl'])){
+	    		tepl($weather_list2);
+	    	}elseif(isset($_GET['hold'])){
+	    		hold($weather_list2);
 	    	}elseif(isset($_GET['date_search'])){
 	    		date_search($weather_list);
 	    	}else{
