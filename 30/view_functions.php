@@ -18,28 +18,14 @@ function viewMenuMaakond(){
 	echo "<a href='Kromski.php?maakond=Tartumaa'>Tartumaa</a>";
 
 }
-function viewPersonMaakondMenu($arr,$maakond){
+function viewPersonMaakondMenu($arr, $maakond){
 	viewMenuMaakond();
 	echo "<br>";
-	if($maakond == 'Harjumaa'){
-		foreach ($arr as $key => $value) {
+	foreach ($arr as $key => $value) {
+		if($value['maakond'] == $maakond){
 			if($key == 'Tallinn' or $key == 'Keila' or $key == 'Jõelähtme'){
 				echo "<a href='Kromski.php?maakond={$value['maakond']}&city={$key}'>{$key}</a> ";
-			}
-		}	
-	}
-	if($maakond == 'Tartumaa'){
-		foreach ($arr as $key => $value) {
-			if($key == 'Elva' or $key == 'Kalaste' or $key == 'Tartu'){
-				echo "<a href='Kromski.php?maakond={$value['maakond']}&city={$key}'>{$key}</a> ";
-			}
-		}	
-	}
-	if($maakond == 'Ida-Virumaa'){
-		foreach ($arr as $key => $value) {
-			if($key == 'Jõhvi' or $key == 'Narva' or $key == 'Kohtla-Järve'){
-				echo "<a href='Kromski.php?maakond={$value['maakond']}&city={$key}'>{$key}</a> ";
-			}
+			}	
 		}	
 	}
 }
