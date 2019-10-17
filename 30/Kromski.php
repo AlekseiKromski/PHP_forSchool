@@ -14,12 +14,8 @@ require_once 'foreachArr.php';
     	<div class="col-md-6 margin_center">
     		<?php
     			if(!empty($_GET)){
-					if($_GET['maakond'] == 'Harjumaa'){
-						viewHarjuMenu($city);
-					}elseif($_GET['maakond'] == 'Tartumaa'){
-						viewTartuMenu($city);
-					}elseif($_GET['maakond'] == 'Ida-Virumaa'){
-						viewIdaMenu($city);
+					if($_GET['maakond']){
+						viewPersonMaakondMenu($city,$_GET['maakond']);
 					}else{
 						viewMenuMaakond($city);
 					}
