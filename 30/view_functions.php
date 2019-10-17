@@ -18,18 +18,34 @@ function viewMenuMaakond(){
 	echo "<a href='Kromski.php?maakond=Tartumaa'>Tartumaa</a>";
 
 }
-function viewPersonMaakondMenu($arr, $maakond){
+
+function viewHarjuMenu($arr){
 	viewMenuMaakond();
 	echo "<br>";
 	foreach ($arr as $key => $value) {
-		if($value['maakond'] == $maakond){
-			if($key == 'Tallinn' or $key == 'Keila' or $key == 'Jõelähtme'){
-				echo "<a href='Kromski.php?maakond={$value['maakond']}&city={$key}'>{$key}</a> ";
-			}	
-		}	
+		if($key == 'Tallinn' or $key == 'Keila' or $key == 'Jõelähtme'){
+			echo "<a href='Kromski.php?maakond={$value['maakond']}&city={$key}'>{$key}</a> ";
+		}
 	}
 }
-
+function viewTartuMenu($arr){
+	viewMenuMaakond();
+	echo "<br>";
+	foreach ($arr as $key => $value) {
+		if($key == 'Tartu' or $key == 'Elva' or $key == 'Kalaste'){
+			echo "<a href='Kromski.php?maakond={$value['maakond']}&city={$key}'>{$key}</a> ";
+		}
+	}
+}
+function viewIdaMenu($arr){
+	viewMenuMaakond();
+	echo "<br>";
+	foreach ($arr as $key => $value) {
+		if($key == 'Narva' or $key == 'Kohtla-Järve' or $key == 'Jõhvi'){
+			echo "<a href='Kromski.php?maakond={$value['maakond']}&city={$key}'>{$key}</a> ";
+		}
+	}
+}
 function viewCityInfo($arr,$city){
 	if($city == 'Tallinn'){
 		foreach ($arr as $key => $value) {
