@@ -17,17 +17,27 @@ require_once 'foreachArr.php';
     	<br>
 		<div class="col-md-2 margin_center">
 			<?php
-				$search = $_POST['search'];
-				foreach ($city as $key => $value) {
-					if($key == $search){
-						echo "<h5>Результат поиска: </h5>";
-						echo "<h4>{$key}</h4>";
-						echo "<img src='img/{$value['img_name']}' width='150px'>";
-						echo "<br><br>";
-						echo "<p>Количество населения: {$value['count_people']}</p>";
-						echo "<p>Уезд: {$value['maakond']}</p>";
-						echo "<hr>";
+				if(!empty($_GET)){
+					if($_GET['search'] == 'true'){
+						$search = $_POST['search'];
+						foreach ($city as $key => $value) {
+							if($key == $search){
+								echo "<h5>Результат поиска: </h5>";
+								echo "<h4>{$key}</h4>";
+								echo "<img src='img/{$value['img_name']}' width='150px'>";
+								echo "<br><br>";
+								echo "<p>Количество населения: {$value['count_people']}</p>";
+								echo "<p>Уезд: {$value['maakond']}</p>";
+								echo "<hr>";
+							}else{
+								header('Location: Kromski.php');
+							}
+						}
+					}else{
+						echo "<h5>Запрос не был отпрвлен</h5>";
 					}
+				}else{
+					echo "<h5>Запрос не был отпрвлен</h5>";
 				}
 			?>
 		</div>
