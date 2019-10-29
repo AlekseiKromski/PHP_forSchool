@@ -1,6 +1,7 @@
 <?php
 
 include 'categoria.php';
+require_once 'functions.php'; //for debuging array
 class ReadFromFile
 {
     public static function readtxt(){
@@ -10,6 +11,7 @@ class ReadFromFile
             $info = explode('|',$line);
             $allcat[] = new Categoria($info[0],$info[1],$info[2]);
         }
+        debug($allcat);
         return $allcat;
 
     }
