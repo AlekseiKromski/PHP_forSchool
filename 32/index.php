@@ -10,9 +10,9 @@ require_once 'functions.php'; //for debuging array
     </head>
     <body>
     	<?php
-           include_once 'readFromFile.php';
-           include_once 'AddIntoFile.php';
-        ReadFromFile::createLinks();
+            include_once 'readFromFile.php';
+            include_once 'AddIntoFile.php';
+            ReadFromFile::createLinks();
             if(isset($_GET['id'])){
                 ReadFromFile::displayInfo($_GET['id']);
             }

@@ -1,6 +1,4 @@
 <?php
-
-include 'AddNewCategory.php';
 class AddIntoFile
 {
     public static function AddNewCat($id, $name, $desc){
