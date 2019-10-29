@@ -10,10 +10,22 @@ require_once 'functions.php'; //for debuging array
     </head>
     <body>
     	<?php
-            include_once 'readFromFile.php';
-            ReadFromFile::createLinks();
+           include_once 'readFromFile.php';
+           include_once 'AddIntoFile.php';
+        ReadFromFile::createLinks();
             if(isset($_GET['id'])){
                 ReadFromFile::displayInfo($_GET['id']);
+            }
+        ?>
+        <form method="post">
+            <input type="text" name="id">
+            <input type="text" name="nameCategory">
+            <input type="text" name="DescCategory">
+            <input type="submit">
+        </form>
+        <?php
+            if(!empty($_POST)){
+                AddIntoFile::AddNewCat($_POST['id'], $_POST['nameCategory'], $_POST['DescCategory']);
             }
         ?>
     </body>
