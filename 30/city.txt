@@ -1,9 +1,0 @@
-Tallinn|434562|Tallinn.jpg|Harjumaa
-Keila|10012|Keila.jpg|Harjumaa
-Jõelähtme|6319|Jagalajuga.jpg|Harjumaa
-Narva|57842|Narva.jfif|Ida-Virumaa
-Kohtla-Järve|34394|Kohtla.jpg|Ida-Virumaa
-Jõhvi|10051|Johvi.jpg|Ida-Virumaa
-Tartu|434562|Tartu.png|Tartumaa
-Elva|5763|Elva.png|Tartumaa
-Kalaste|434562|Kalaste.png|Tartumaa
