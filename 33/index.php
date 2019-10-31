@@ -12,14 +12,15 @@ require_once 'config_db.php'; //connect to database
     <body>
         <?php
             include 'ReadFromDB.php';
+            echo "<div style='overflow: hidden;' class='mb-5'>";
             ReadFromDB::readDB($connect);
-        ?>
-    <div class="container">
-        <?php
-            ReadFromDB::createTables($connect);
             ReadFromDB::createMenu($connect);
+            ReadFromDB::createTables($connect);
+            echo "</div>";
+            if(isset($_GET['day'])){
+                ReadFromDB::displayCombo_box($connect);
+            }
         ?>
-    </div>
     </body>
 </html>
 

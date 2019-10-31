@@ -7,14 +7,16 @@ class ilm
     private $night_tem;
     private $week_day;
     private $img;
+    private $desc;
 
-    function __construct($id, $day_tem, $night_tem, $week_day, $img)
+    function __construct($id, $day_tem, $night_tem, $week_day, $img,$description)
     {
         $this->id = $id;
         $this->day_tem = $day_tem;
         $this->night_tem = $night_tem;
         $this->week_day = $week_day;
         $this->img = $img;
+        $this->desc = $description;
     }
 
     public function getId()
@@ -36,6 +38,10 @@ class ilm
     public function getImg()
     {
         return $this->img;
+    }
+    public function getDesc()
+    {
+        return $this->desc;
     }
 
 }

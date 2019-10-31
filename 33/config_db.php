@@ -2,6 +2,7 @@
 $connect = mysqli_connect('localhost','root', '','weather');
 if(!$connect){
     echo 'нету подключения к базе данных';
+    die;
 }else{
     mysqli_query($connect,"SET NAMES 'utf8'");
     mysqli_query($connect,"SET CHARACTER SET 'utf8'");

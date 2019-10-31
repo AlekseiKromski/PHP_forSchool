@@ -9,7 +9,7 @@ class ReadFromDB
         $weather = array();
         $query = mysqli_query($connect,"SELECT * FROM weather");
         while($query_fetch = mysqli_fetch_assoc($query)){
-            $weather[] = new ilm($query_fetch['id'],$query_fetch['day_tem'],$query_fetch['night_tem'],$query_fetch['week_day'],$query_fetch['img']);
+            $weather[] = new ilm($query_fetch['id'],$query_fetch['day_tem'],$query_fetch['night_tem'],$query_fetch['week_day'],$query_fetch['img'],$query_fetch['description']);
         }
         return $weather;
     }
@@ -17,7 +17,7 @@ class ReadFromDB
     public static function createTables($connect){
         //создание таблицы
         $weathers = self::readDB($connect);
-        echo "<table class=\"table\" style='background-color: #121111; color:white; float: left'>";
+        echo "<table class=\"table col-md-8\" style='background-color: #121111; color:white; float: left'>";
             echo "
             <thead>
                 <tr>
@@ -52,11 +52,23 @@ class ReadFromDB
     public static function createMenu($connect){
         //создание меню
         $weathers = self::readDB($connect);
-        echo "<ul class=\"list-group\">";
+        echo "<ul class=\"list-group col-md-4 p-0\" style=\"float: left;\">";
             foreach ($weathers as $weather){
-                echo "<li class=\"list-group-item\">{$weather->getWeek_day}</li>";
+                echo "<li class=\"list-group-item\"><a href='index.php?day={$weather->getWeek_day()}'>{$weather->getWeek_day()}</a></li>";
             }
 
         echo "</ul>";
+    }
+
+    public static function displayCombo_box($connect){
+        //создание меню
+        $weathers = self::readDB($connect);
+        echo "<div class='col-md-4' style='overflow: hidden;padding: 1%;background-color: #ececec;border-radius: 25px 25px;'>";
+            foreach ($weathers as $weather){
+                if($weather->getWeek_day() == $_GET['day']){
+                    echo $weather->getDesc();
+                }
+            }
+        echo "</div>";
     }
 }
