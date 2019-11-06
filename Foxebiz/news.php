@@ -113,7 +113,7 @@
                                 <div class=\"card-body p-5\">
                                    <small class=\"d-block text-muted mb-2 mt-2\">{$v['date']}</small>
                                    <h5>
-                                      <a href=\"javascript:;\">{$v['name']}</a>
+                                      <a href=\"single-news.php?id ={$v['id']}\">{$v['name']}</a>
                                    </h5>
                                    <p >{$v['description']}</p>
                                    <a href=\"javascript:;\" class=\"mt-2 d-block\">{$v['category']}</a>
