@@ -3,7 +3,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="p-5">
-                    <form class="d-flex" method="post" action="Action/Search.php">
+                    <form class="d-flex" method="post" action="search_result.php">
                         <div class=" input-group form mr-2">
                             <div class="input-group-prepend ">
                               <span class="input-group-text form-icon">

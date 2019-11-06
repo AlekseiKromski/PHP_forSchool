@@ -10,7 +10,7 @@ class News
         if($id == 'All'){
             $query = mysqli_query($connect,"SELECT date,name,id,category,user,description FROM news");
         }else{
-            $query = mysqli_query($connect,"SELECT * FROM news WHERE category = '$id'");
+            $query = mysqli_query($connect,"SELECT date,name,id,category,user,description FROM news WHERE category = '$id'");
         }
         $arr = [];
         while ($result = mysqli_fetch_assoc($query)){
