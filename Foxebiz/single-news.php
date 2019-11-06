@@ -31,7 +31,7 @@
       <!-- End preloader-->
       <!--Wrapper-->
       <div class="wrapper">
-         <div class="modal login fade" id="search" tabindex="-1" role="dialog"  aria-hidden="true">
+        <div class="modal login fade" id="search" tabindex="-1" role="dialog"  aria-hidden="true">
             <div class="modal-dialog" role="document">
                <div class="modal-content">
                <div class="p-5">
@@ -96,7 +96,7 @@
                               </ul>
                            </li>
                            <li class="dropdown">
-                              <a href="javascript:;" class="nav-link dropdown-toggle"   data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                              <a href="javascript:;" class="nav-link dropdown-toggle"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                               Blog<span class="dropdown-arrow ml-2">
                               <span class="fa fa-angle-down dropdown-arrow-inner"></span>
                               </span>
@@ -138,7 +138,7 @@
                      <nav aria-label="breadcrumb">
                         <ol class="breadcrumb mb-0  justify-content-center">
                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                           <li class="breadcrumb-item active" aria-current="page">Single right sidebar</li>
+                           <li class="breadcrumb-item active" aria-current="page">Single left sidebar</li>
                         </ol>
                      </nav>
                   </div>
@@ -154,7 +154,7 @@
             <div class="container">
                <!--Row-->
                <div class="row">
-                  <div class="col-lg-9  order-lg-1 mb-lg-0 mb-5">
+                  <div class="col-lg-9  order-lg-2 mb-lg-0 mb-5">
                      <!--Row-->
                      <div class="row">
                         <div class="col-lg-12 mb-5">
@@ -165,23 +165,11 @@
                               <div class="card-body">
                                  <h1 class="h2">Leverage these growth hacks</h1>
                                  <div class="d-lg-flex align-items-center mb-5 font-size-14">
-                                    <span class="text-gray d-block  mb-1 mb-lg-0">January 6th, 2019 in&nbsp;</span>
-                                    <a href="javascript:;" class="mr-2">Business</a>
-                                    <img src="assets/img/p3.jpg" alt="" class="avatar-xs  rounded-circle mr-2">
-                                    <h3 class="d-inline-block mb-0 font-size-14 text-gray">by
-                                       <a href="javascript:;">Melissa Wagner</a>
-                                    </h3>
+                                    <span class="text-gray d-block  mb-1 mb-lg-0">January 6th, 2019  </span>
                                  </div>
                                  <article>
                                     <p>
                                        Melbourne is the coastal capital of the southeastern Australian state of Victoria. At the city's centre is the modern Federation Square development, with plazas, bars, and restaurants by the Yarra River. In the Southbank area, the Melbourne Arts Precinct is the site of Arts Centre Melbourne and the National Gallery of Victoria, with Australian and indigenous art.
-                                    </p>
-                                    <p>
-                                       Melbourne is the coastal capital of the southeastern Australian state of Victoria. At the city's centre is the modern Federation Square development, with plazas, bars, and restaurants by the Yarra River. In the Southbank area, the Melbourne Arts Precinct is the site of Arts Centre Melbourne and the National Gallery of Victoria, with Australian and indigenous art.
-                                    </p>
-                                    <h4 class="mt-5">Leverage these growth hacks</h4>
-                                    <p>
-                                      Melbourne is the coastal capital of the southeastern Australian state of Victoria. At the city's centre is the modern Federation Square development, with plazas, bars, and restaurants by the Yarra River. In the Southbank area, the Melbourne Arts Precinct is the site of Arts Centre Melbourne and the National Gallery of Victoria, with Australian and indigenous art.
                                     </p>
                                     <ul class="list-inline mb-0  ">
                                        <li class="list-inline-item  pb-2 mr-1">
@@ -234,7 +222,7 @@
                            <div class="card">
                               <div class="card-body">
                                  <h3 class="h4">12 comments</h3>
-                                 <ul class="comments-list list-inline">
+                                 <ul class="comments-list list-inline mb-0">
                                     <li class="list-inline-item">
                                        <div class="comment">
                                           <div class="media mb-3">
@@ -325,7 +313,7 @@
                      </div>
                      <!--End row-->
                   </div>
-                  <div class="col-lg-3  order-lg-2">
+                  <div class="col-lg-3  order-lg-1">
                      <div class="mb-5">
                         <h3 class="h5 mb-4">Latest Posts</h3>
                         <ul class="list-unstyled mb-0">

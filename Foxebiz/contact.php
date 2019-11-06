@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -29,7 +31,7 @@
       <!-- End preloader-->
       <!--Wrapper-->
       <div class="wrapper">
-<div class="modal login fade" id="search" tabindex="-1" role="dialog"  aria-hidden="true">
+         <div class="modal login fade" id="search" tabindex="-1" role="dialog"  aria-hidden="true">
             <div class="modal-dialog" role="document">
                <div class="modal-content">
                <div class="p-5">
@@ -72,7 +74,7 @@
                               <span class="fa fa-angle-down dropdown-arrow-inner"></span>
                               </span>
                               </a>
-                              <ul class="dropdown-menu">
+                              <ul class="dropdown-menu" >
                                  <li><a class="dropdown-item" href="about.html">About</a></li>
                                  <li><a class="dropdown-item" href="service.html">Services</a></li>
                                  <li><a class="dropdown-item" href="comingsoon.html">Comingsoon</a></li>
@@ -125,155 +127,136 @@
          <!--Hero section-->
          <section class="hero" >
             <div class="background-img gradient-overlay gradient-overlay-dark">
-               <img src="assets/img/15.jpg" alt="" >
+               <img src="assets/bg/bg_contact.jpg" alt="" >
             </div>
             <!--Container-->
             <div class="container height-30vh">
-               <!--row-->
+               <!--Row-->
                <div class="row justify-content-center text-center">
                   <div class="col-12 col-md-10 col-lg-10">
-                     <h1 class="mb-3 text-white">FAQ</h1>
+                     <h1 class=" mb-3 text-white">Contact Us</h1>
                      <nav aria-label="breadcrumb">
                         <ol class="breadcrumb mb-0  justify-content-center">
                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                           <li class="breadcrumb-item active" aria-current="page">FAQ</li>
+                           <li class="breadcrumb-item active" aria-current="page">Contact</li>
                         </ol>
                      </nav>
                   </div>
                </div>
+               <!--End row-->
             </div>
+            <!--End container-->
          </section>
          <!--End hero section-->
          <!--Section-->
+         <section class="spacer-double-lg">
+            <!--Container-->
+            <div class="container ">
+                  <div class="col-lg-6 p-5 float-left text-center">
+                     <div class="background-img gradient-overlay gradient-overlay-azure" >
+                        <img src="assets/img/11.jpg" alt="">
+                     </div>
+                     <div class="p-5 position-relative">
+                        <h2 class="h3 text-white mb-4">Tallinn office</h2>
+                        <ul class="list-unstyled text-white">
+                           <li class=" pb-1">
+                               Sakala 10143 Tallinn
+                           </li>
+                           <li class=" py-1">
+                              Mon-Fri: 9 AM to 5 PM
+                           </li>
+                           <li class=" py-1">
+                              +3729499594
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="col-lg-6 p-5 float-left text-center">
+                     <div class="background-img gradient-overlay gradient-overlay-dark-blue" >
+                        <img src="assets/img/12.jpg" alt="">
+                     </div>
+                     <div class="p-5 position-relative">
+                        <h2 class="h3 text-white mb-4">Tartu office</h2>
+                        <ul class="list-unstyled text-white">
+                           <li class=" pb-1">
+                               Turu 10 51013 Tartu
+                           </li>
+                           <li class=" py-1">
+                              Mon-Fri: 9 AM to 5 PM
+                           </li>
+                           <li class=" py-1">
+                              +3729499594
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+            </div>
+         </section>
+         <!--End section-->
+         <!--Section-->
          <section class="spacer-double-lg bg-gray">
             <!--Container-->
-            <div class="container">
-               <!--row-->
+            <div class="container ">
+               <!--Row-->
                <div class="row justify-content-center">
                   <div class="col">
                      <div class="mb-5 pb-5 text-center">
-                        <h2 class="h3">Some commonly asked questions</h2>
-                        <p class="w-md-75 mb-0 mx-auto">Build an online presence with this professional bootstrap 4 landing page.</p>
+                        <h2 class="h3">Contact us</h2>
                      </div>
                   </div>
                </div>
-               <!--end of row-->
+               <!--End row-->
             </div>
-            <!--end of container-->
+            <!--End container-->
             <!--Container-->
-            <div class="container">
-               <!--row-->
-               <div class="row justify-content-center">
-                  <div class="col-lg-8">
-                     <div id="faq-accordion">
-                        <div class="card card-collapse mb-3 ">
-                           <div class="card-header accordion-header">
-                              <h5 class="mb-0">
-                                 <button class="btn btn-link btn-block d-flex justify-content-between accordion-collapse-btn collapsed" data-toggle="collapse" data-target="#faq-accordion-1" aria-expanded="false" aria-controls="faq-accordion-1">
-                                 What is forex trading ?
-                                 <span class="accordion-arrow">
-                                 <span class="fa fa-angle-down accordion-arrow-inner"></span>
-                                 </span>
-                                 </button>
-                              </h5>
-                           </div>
-                           <div id="faq-accordion-1" class="collapse" data-parent="#faq-accordion">
-                              <div class="card-body accordion-body">
-                                 Web marketing refers to a broad category of advertising that takes many different forms, but generally involves any marketing activity conducted online. Marketers have shifted their efforts online because it tends to be significantly less expensive. 
-                              </div>
-                           </div>
-                        </div>
-                        <div class="card card-collapse mb-3">
-                           <div class="card-header accordion-header">
-                              <h5 class="mb-0">
-                                 <button class="btn btn-link btn-block d-flex justify-content-between accordion-collapse-btn collapsed" data-toggle="collapse" data-target="#faq-accordion-2" aria-expanded="false" aria-controls="faq-accordion-2">
-                                 It is worth trading forex ?
-                                 <span class="accordion-arrow">
-                                 <span class="fa fa-angle-down accordion-arrow-inner"></span>
-                                 </span>
-                                 </button>
-                              </h5>
-                           </div>
-                           <div id="faq-accordion-2" class="collapse" data-parent="#faq-accordion">
-                              <div class="card-body accordion-body">
-                                 Web marketing refers to a broad category of advertising that takes many different forms, but generally involves any marketing activity conducted online. Marketers have shifted their efforts online because it tends to be significantly less expensive.
-                              </div>
-                           </div>
-                        </div>
-                        <div class="card card-collapse mb-3 ">
-                           <div class="card-header accordion-header">
-                              <h5 class="mb-0">
-                                 <button class="btn btn-link btn-block d-flex justify-content-between accordion-collapse-btn collapsed" data-toggle="collapse" data-target="#faq-accordion-3" aria-expanded="false" aria-controls="faq-accordion-3">
-                                 Who is the richest forex trader ?
-                                 <span class="accordion-arrow">
-                                 <span class="fa fa-angle-down accordion-arrow-inner"></span>
-                                 </span>
-                                 </button>
-                              </h5>
-                           </div>
-                           <div id="faq-accordion-3" class="collapse" data-parent="#faq-accordion">
-                              <div class="card-body accordion-body">
-                                 Web marketing refers to a broad category of advertising that takes many different forms, but generally involves any marketing activity conducted online. Marketers have shifted their efforts online because it tends to be significantly less expensive.
-                              </div>
-                           </div>
-                        </div>
-                        <div class="card card-collapse mb-3">
-                           <div class="card-header accordion-header">
-                              <h5 class="mb-0">
-                                 <button class="btn btn-link btn-block d-flex justify-content-between accordion-collapse-btn collapsed" data-toggle="collapse" data-target="#faq-accordion-4" aria-expanded="false" aria-controls="faq-accordion-4">
-                                 Can you get rich by trading forex ?
-                                 <span class="accordion-arrow">
-                                 <span class="fa fa-angle-down accordion-arrow-inner"></span>
-                                 </span>
-                                 </button>
-                              </h5>
-                           </div>
-                           <div id="faq-accordion-4" class="collapse" data-parent="#faq-accordion">
-                              <div class="card-body accordion-body">
-                                 Web marketing refers to a broad category of advertising that takes many different forms, but generally involves any marketing activity conducted online. Marketers have shifted their efforts online because it tends to be significantly less expensive.
-                              </div>
-                           </div>
-                        </div>
-                        <div class="card card-collapse">
-                           <div class="card-header accordion-header ">
-                              <h5 class="mb-0">
-                                 <button class="btn btn-link btn-block d-flex justify-content-between accordion-collapse-btn collapsed" data-toggle="collapse" data-target="#faq-accordion-5" aria-expanded="false" aria-controls="faq-accordion-5">
-                                 How much money od i need to trade ?
-                                 <span class="accordion-arrow">
-                                 <span class="fa fa-angle-down accordion-arrow-inner"></span>
-                                 </span>
-                                 </button>
-                              </h5>
-                           </div>
-                           <div id="faq-accordion-5" class="collapse" data-parent="#faq-accordion">
-                              <div class="card-body accordion-body">
-                                 Web marketing refers to a broad category of advertising that takes many different forms, but generally involves any marketing activity conducted online. Marketers have shifted their efforts online because it tends to be significantly less expensive.
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="w-75 mx-auto mt-4 text-center">
-                        <p class="mb-0 small text-muted">Didn't find what you were after? Visit the <a class="font-weight-500" href="javascript:;">Knowledgebase Center</a>.</p>
-                     </div>
-                  </div>
-               </div>
-               <!--end of row-->
-            </div>
-            <!--end of container-->
-         </section>
-         <!--End section-->
-          <!--Section-->
-         <section class="spacer-double-lg">
-            <!--Container-->
-            <div class="container">
+            <div class="container ">
                <!--Row-->
                <div class="row justify-content-center">
-                  <div class="col ">
-                     <div class=" text-center">
-                        <h2 class="">Ready to start a project ?  </h2>
-                        <p class="w-md-75 mx-auto">Build an online presence with this professional bootstrap 4 landing page.</p>
-                        <button type="button" class="btn btn-primary btn-wide">Get started</button>
-                     </div>
+                  <div class="col-lg-9">
+                     <form method="post">
+                        <div class="row">
+                           <div class="col-sm-6 mb-5">
+                              <label class="form-label">
+                              Your name
+                              <span class="text-danger">*</span>
+                              </label>
+                              <div class=" input-group form">
+                                 <input class="form-control " type="text" name="name"  placeholder="Your full name" >
+                              </div>
+                           </div>
+                           <div class="col-sm-6 mb-5">
+                              <label class="form-label">
+                              Your email
+                              <span class="text-danger">*</span>
+                              </label>
+                              <div class=" input-group form">
+                                 <input class="form-control " type="email" name="email" placeholder="Your email" >
+                              </div>
+                           </div>
+                           <div class="col-sm-12 mb-5">
+                              <label class="form-label">
+                              Your phone
+                              </label>
+                              <div class="input-group form">
+                                 <input class="form-control " type="text" name="phone"  placeholder="Phone" >
+                              </div>
+                           </div>
+                           <div class="col-12">
+                              <label class="form-label">
+                              Your message
+                              <span class="text-danger">*</span>
+                              </label>
+                              <div class=" input-group form mb-5">
+                                 <textarea class="form-control " rows="6" name="text"  placeholder="Type your message" ></textarea>
+                              </div>
+                           </div>
+                           <div class="col">
+                              <div class="text-center">
+                                  <input type="submit" value="Send" class="btn btn-primary btn-wide mb-2">
+                              </div>
+                           </div>
+                        </div>
+                     </form>
                   </div>
                </div>
                <!--End row-->
@@ -281,49 +264,6 @@
             <!--End container-->
          </section>
          <!--End section-->
-         <!--Footer-->
-         <footer class="bg-dark spacer-double-md">
-            <!--Container-->
-            <div class="container">
-               <!--row-->
-               <div class="row justify-content-between">
-                  <div class="col-lg-4 d-flex align-items-start flex-column">
-                     <a class="d-inline-block mb-4"  href="javascript:;">
-                     <img src="assets/svg/logo-light.svg" class="footer-logo" alt="">
-                     </a>
-                     <p class="font-size-12 text-light">&copy; 2019 all rights reserved - MutationMedia. <br>A product of mutationthemes.</p>
-                  </div>
-                  <div class="col-6 col-md-4 col-lg-2 mb-0">
-                     <h3 class="h6  mb-3  text-white font-weight-600">About us</h3>
-                     <div class="list-group list-group-flush">
-                        <a class="list-group-item list-group-item-action " href="javascript:;">About</a>
-                        <a class="list-group-item list-group-item-action" href="javascript:;">Services</a>
-                        <a class="list-group-item list-group-item-action" href="javascript:;">Hire us</a>
-                     </div>
-                  </div>
-                  <div class="col-6 col-md-4 col-lg-2 mb-0">
-                     <h3 class="h6  mb-3 text-white font-weight-600">Help &amp; Support</h3>
-                     <div class="list-group list-group-flush">
-                        <a class="list-group-item  list-group-item-action " href="javascript:;">Contact us</a>
-                        <a class="list-group-item list-group-item-action " href="javascript:;">Legals</a>
-                        <a class="list-group-item list-group-item-action " href="javascript:;">FAQ</a>
-                     </div>
-                  </div>
-                  <div class="col-6 col-md-4 col-lg-3  mb-0">
-                     <h3 class="h6 text-white mb-3 font-weight-600">Social hubs</h3>
-                     <ul class="list-inline mb-0">
-                        <li class="list-inline-item mb-2 mb-lg-0 mr-1"><a class="social-icon" href="javascript:;"><span class="fab fa-facebook-f"></span></a></li>
-                        <li class="list-inline-item mr-1"><a class="social-icon " href="javascript:;"><span class="fab fa-twitter"></span></a></li>
-                        <li class="list-inline-item mr-1"><a class="social-icon " href="javascript:;"><span class="fab fa-youtube"></span></a></li>
-                        <li class="list-inline-item mr-1"><a class="social-icon " href="javascript:;"><span class="fab fa-linkedin"></span></a></li>
-                     </ul>
-                  </div>
-               </div>
-               <!--end of row-->
-            </div>
-            <!--end of container-->
-         </footer>
-         <!--End footer-->
          <!-- Modal -->
          <div class="modal login fade" id="login" tabindex="-1" role="dialog"  aria-hidden="true">
             <div class="modal-dialog" role="document">

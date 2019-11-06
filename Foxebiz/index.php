@@ -1,3 +1,6 @@
+<?php
+require_once 'config/config_require.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -52,55 +55,14 @@
          </div>
       </div>
          <!--Header-->
-         <header class="header">
-            <div class="container ">
-               <div class="floating-nav mt-lg-5 ">
-                  <nav class="navbar navbar-expand-lg header-navbar ">
-                     <div class="navbar-brand">
-                        <a class=" navbar-brand navbar-logo" href="index.html">
-                        <img class="mb-0" src="assets/svg/logo.svg" alt="">
-                        </a>
-                     </div>
-                     <button class="navbar-toggler btn-navbar-toggler" type="button" data-toggle="collapse" data-target=".nav-menu" aria-expanded="true" aria-label="Toggle navigation">
-                     <span class="fa fa-bars"></span>
-                     </button>
-                     <div class="nav-menu collapse navbar-collapse navbar-collapse justify-content-end py-0 ">
-                        <ul class=" navbar-nav  header-navbar-nav">
-                           <li><a class=" nav-link" href="index.html">Home</a></li>
-                           <li><a class="nav-link" href="contact.html">About us</a></li>
-                           <li><a class="nav-link" href="contact.html">Contact</a></li>
-                           <li class="dropdown">
-                              <a href="javascript:;" class="nav-link dropdown-toggle"   data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                              Category<span class="dropdown-arrow ml-2">
-                              <span class="fa fa-angle-down dropdown-arrow-inner"></span>
-                              </span>
-                              </a>
-                              <ul class="dropdown-menu">
-                                 <!--Вывод категорий чреез php
-                                 <li><a class="dropdown-item" href="about.html">About</a></li>
-                                 -->
-                                 <li><a class="dropdown-item" href="about.html">IT</a></li>
-                                 <li><a class="dropdown-item" href="about.html">Economy</a></li>
-                                 <li><a class="dropdown-item" href="about.html">City</a></li>
-                                 <li><a class="dropdown-item" href="about.html">What watch</a></li>
-                              </ul>
-                           </li>
-
-                              <a class="btn btn-xs btn-icon btn-text-dark pb-3 pb-lg-0 pl-0 pt-0" href="#search" data-toggle="modal" data-target="#search">
-                              <span class="fa fa-search "></span>
-                              </a>
-                           </li>
-                        </ul>
-                     </div>
-                  </nav>
-               </div>
-            </div>
-         </header>
+         <?php
+         require_once 'include_files/header.php';
+         ?>
          <!--End header-->
          <!--Hero section-->
          <section class="hero" >
             <div class="background-img gradient-overlay gradient-overlay-dark">
-               <img src="assets/img/1.jpg" alt="" >
+               <img src="assets/bg/bg.jpg" alt="" >
             </div>
             <div class="container height-70vh">
                <div class="row justify-content-center text-center">
