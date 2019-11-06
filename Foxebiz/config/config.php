@@ -6,4 +6,5 @@ $links = [
 $core_classes = [
     'category' => 'core/Category.php',
     'TopNews' => 'core/TopNews.php',
+    'News' => 'core/News.php',
 ];

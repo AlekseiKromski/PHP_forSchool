@@ -1,3 +1,14 @@
+<?php
+    require_once 'config/config_require.php';
+    require_once $core_classes['News'];
+    if(isset($_GET['id'])){
+        $id = $_GET['id'];
+        $object_news = new News($connect,$id);
+    }else{
+        $id = 'All';
+        $object_news = new News($connect,$id);
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -16,17 +27,6 @@
       <link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
    </head>
    <body>
-      <!-- Preloader -->
-      <div class="loader">
-         <!-- Preloader inner -->
-         <div class="loader-inner">
-            <svg width="120" height="220" viewbox="0 0 100 100" class="loading-spinner" version="1.1" xmlns="http://www.w3.org/2000/svg">
-               <circle class="spinner" cx="50" cy="50" r="21" fill="#ffffff" stroke-width="4"/>
-            </svg>
-         </div>
-         <!-- End preloader inner -->
-      </div>
-      <!-- End preloader-->
       <!--Wrapper-->
       <div class="wrapper">
          <div class="modal login fade" id="search" tabindex="-1" role="dialog"  aria-hidden="true">
@@ -50,93 +50,26 @@
             </div>
          </div>
       </div>
-         <!--Header-->
-         <header class="header">
-            <div class="container ">
-               <div class="floating-nav mt-lg-5">
-                  <nav class="navbar navbar-expand-lg header-navbar ">
-                     <div class="navbar-brand">
-                        <a class=" navbar-brand navbar-logo" href="index.html">
-                        <img class="mb-0" src="assets/svg/logo.svg" alt="">
-                        </a>
-                     </div>
-                     <button class="navbar-toggler btn-navbar-toggler" type="button" data-toggle="collapse" data-target=".nav-menu" aria-expanded="true" aria-label="Toggle navigation">
-                     <span class="fa fa-bars"></span>
-                     </button>
-                     <div class="nav-menu collapse navbar-collapse navbar-collapse justify-content-end py-0 ">
-                        <ul class=" navbar-nav  header-navbar-nav">
-                           <li><a class=" nav-link" href="index.html">Home</a></li>
-                           <li class="dropdown">
-                              <a href="javascript:;" class="nav-link dropdown-toggle"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                              Pages<span class="dropdown-arrow ml-2">
-                              <span class="fa fa-angle-down dropdown-arrow-inner"></span>
-                              </span>
-                              </a>
-                              <ul class="dropdown-menu" >
-                                 <li><a class="dropdown-item" href="about.html">About</a></li>
-                                 <li><a class="dropdown-item" href="service.html">Services</a></li>
-                                 <li><a class="dropdown-item" href="comingsoon.html">Comingsoon</a></li>
-                                 <li><a class="dropdown-item" href="404.html">404</a></li>
-                                 <li><a class="dropdown-item" href="hireus.html">Hire us</a></li>
-                                 <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
-                              </ul>
-                           </li>
-                           <li class="dropdown">
-                              <a href="javascript:;" class="nav-link dropdown-toggle"   data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                              Works<span class="dropdown-arrow ml-2">
-                              <span class="fa fa-angle-down dropdown-arrow-inner"></span>
-                              </span>
-                              </a>
-                              <ul class="dropdown-menu" >
-                                 <li><a class="dropdown-item" href="portfolio-grid-2.html">Grid works 2</a></li>
-                                 <li><a class="dropdown-item" href="portfolio-grid-3.html">Grid works 3</a></li>
-                                 <li><a class="dropdown-item" href="portfolio-single.html">Single work</a></li>
-                              </ul>
-                           </li>
-                           <li class="dropdown">
-                              <a href="javascript:;" class="nav-link dropdown-toggle"   data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                              Blog<span class="dropdown-arrow ml-2">
-                              <span class="fa fa-angle-down dropdown-arrow-inner"></span>
-                              </span>
-                              </a>
-                              <ul class="dropdown-menu" >
-                                 <li><a class="dropdown-item" href="blog-full-width.html">Full Width</a></li>
-                                 <li><a class="dropdown-item" href="blog-right-sidebar.html">Right sidebar</a></li>
-                                 <li><a class="dropdown-item" href="blog-left-sidebar.html">Left sidebar</a></li>
-                                 <li><a class="dropdown-item" href="blog-single.html">Single post</a></li>
-                                 <li><a class="dropdown-item" href="blog-single-left-sidebar.html">Single left sidebar</a></li>
-                                 <li><a class="dropdown-item" href="blog-single-right-sidebar.html">Single right sidebar</a></li>
-                              </ul>
-                           </li>
-                           <li><a class="nav-link" href="contact.html">Contact</a></li>
-                           <li class="btn-nav mr-lg-3"><a class="btn btn-primary btn-sm " href="#login" data-toggle="modal" data-target="#login"><span class="fa fa-user-circle mr-1"></span>Signin</a></li>
-                           <li>
-                              <a class="btn btn-xs btn-icon btn-text-dark pb-3 pb-lg-0 pl-0 pt-0" href="#search" data-toggle="modal" data-target="#search">
-                              <span class="fa fa-search "></span>
-                              </a>
-                           </li>
-                        </ul>
-                     </div>
-                  </nav>
-               </div>
-            </div>
-         </header>
+         <?php
+         require_once 'include_files/header.php';
+
+         ?>
          <!--End header-->
          <!--Hero section-->
          <section class="hero" >
             <div class="background-img gradient-overlay gradient-overlay-dark">
-               <img src="assets/img/13.jpg" alt="" >
+               <img src="assets/bg/bd_news.jpg" alt="" >
             </div>
             <!--Container-->
             <div class="container height-30vh">
                <!--Row-->
                <div class="row justify-content-center text-center">
                   <div class="col-12 col-md-10 col-lg-10">
-                     <h1 class="mb-3 text-white">Blog classic</h1>
+                     <h1 class="mb-3 text-white"><?php echo $id; ?> news</h1>
                      <nav aria-label="breadcrumb">
                         <ol class="breadcrumb mb-0  justify-content-center">
                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                           <li class="breadcrumb-item active" aria-current="page">Full width</li>
+                           <li class="breadcrumb-item active" aria-current="page">news</li>
                         </ol>
                      </nav>
                   </div>
@@ -190,186 +123,36 @@
             <div class="container">
                <!--Row-->
                <div class="row">
-                  <div class="col-md-6 col-lg-4 d-flex mb-5">
-                     <div class="card">
-                        <div class="card-body p-5">
-                           <small class="d-block text-muted mb-2 mt-2">Octber 29, 2018</small>
-                           <h5>
-                              <a href="javascript:;">10 Tips for savvy travellers </a>
-                           </h5>
-                           <p>Work closely to create opportunities and provide marketing support.</p>
-                           <a href="javascript:;" class="mt-2 d-block">Investing</a>
-                        </div>
-                        <div class="card-footer bg-gray py-3 px-5">
-                           <div class="d-flex align-items-center">
-                              <img src="assets/img/p3.jpg" alt="" class="avatar-sm  rounded-circle mr-3">
-                              <h3 class="d-inline-block mb-0">
-                                 <a class="d-block font-size-14" href="javascript:;">Renee Mu</a>
-                              </h3>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-md-6 col-lg-4 d-flex mb-5">
-                     <div class="card">
-                        <div class="card-body p-5">
-                           <small class="d-block text-muted mb-2 mt-2">October 29, 2018</small>
-                           <h5>
-                              <a href="javascript:;">Securing your first-round</a>
-                           </h5>
-                           <p>Entrepreneur Joanne Halsey shares her tips for delivering an investor pitch.</p>
-                           <a href="javascript:;" class="mt-2 d-block">Finance</a>
-                        </div>
-                        <div class="card-footer bg-gray py-3 px-5">
-                           <div class="d-flex align-items-center">
-                              <img src="assets/img/p1.jpg" alt="" class="avatar-sm  rounded-circle mr-3">
-                              <h3 class="d-inline-block mb-0">
-                                 <a class="d-block font-size-14" href="javascript:;">Jeremy Spivak</a>
-                              </h3>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-md-6 col-lg-4 d-flex mb-5">
-                     <div class="card">
-                        <div class="card-body p-5">
-                           <small class="d-block text-muted mb-2 mt-2">October 28, 2018</small>
-                           <h5>
-                              <a href="javascript:;">Leverage these growth hacks</a>
-                           </h5>
-                           <p>Entrepreneur Joanne Halsey shares her tips for delivering an investor pitch.</p>
-                           <a href="javascript:;" class="mt-2 d-block">Freelance</a>
-                        </div>
-                        <div class="card-footer bg-gray py-3 px-5">
-                           <div class="d-flex align-items-center">
-                              <img src="assets/img/p2.jpg" alt="" class="avatar-sm  rounded-circle mr-3">
-                              <h3 class="d-inline-block mb-0">
-                                 <a class="d-block font-size-14" href="javascript:;">David Taylor</a>
-                              </h3>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-md-6 col-lg-4 d-flex mb-5">
-                     <div class="card">
-                        <div class="card-body p-5">
-                           <small class="d-block text-muted mb-2 mt-2">Octber 29, 2018</small>
-                           <h5>
-                              <a href="javascript:;">10 Tips for savvy travellers </a>
-                           </h5>
-                           <p>Work closely to create opportunities and provide marketing support.</p>
-                           <a href="javascript:;" class="mt-2 d-block">Investing</a>
-                        </div>
-                        <div class="card-footer bg-gray py-3 px-5">
-                           <div class="d-flex align-items-center">
-                              <img src="assets/img/p3.jpg" alt="" class="avatar-sm  rounded-circle mr-3">
-                              <h3 class="d-inline-block mb-0">
-                                 <a class="d-block font-size-14" href="javascript:;">Renee Mu</a>
-                              </h3>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-md-6 col-lg-4 d-flex mb-5">
-                     <div class="card">
-                        <div class="card-body p-5">
-                           <small class="d-block text-muted mb-2 mt-2">October 29, 2018</small>
-                           <h5>
-                              <a href="javascript:;">Securing your first-round</a>
-                           </h5>
-                           <p>Entrepreneur Joanne Halsey shares her tips for delivering an investor pitch.</p>
-                           <a href="javascript:;" class="mt-2 d-block">Business</a>
-                        </div>
-                        <div class="card-footer bg-gray py-3 px-5">
-                           <div class="d-flex align-items-center">
-                              <img src="assets/img/p1.jpg" alt="" class="avatar-sm  rounded-circle mr-3">
-                              <h3 class="d-inline-block mb-0">
-                                 <a class="d-block font-size-14" href="javascript:;">Jeremy Spivak</a>
-                              </h3>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-md-6 col-lg-4 d-flex mb-5">
-                     <div class="card">
-                        <div class="card-body p-5">
-                           <small class="d-block text-muted mb-2 mt-2">October 28, 2018</small>
-                           <h5>
-                              <a href="javascript:;">Leverage these growth hacks</a>
-                           </h5>
-                           <p>Entrepreneur Joanne Halsey shares her tips for delivering an investor pitch.</p>
-                           <a href="javascript:;" class="mt-2 d-block">Freelance</a>
-                        </div>
-                        <div class="card-footer bg-gray py-3 px-5">
-                           <div class="d-flex align-items-center">
-                              <img src="assets/img/p2.jpg" alt="" class="avatar-sm  rounded-circle mr-3">
-                              <h3 class="d-inline-block mb-0">
-                                 <a class="d-block font-size-14" href="javascript:;">David Taylor</a>
-                              </h3>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-md-6 col-lg-4 d-flex  mb-5 mb-lg-0">
-                     <div class="card">
-                        <div class="card-body p-5">
-                           <small class="d-block text-muted mb-2 mt-2">Octber 29, 2018</small>
-                           <h5>
-                              <a href="javascript:;">10 Tips for savvy travellers </a>
-                           </h5>
-                           <p>Work closely to create opportunities and provide marketing support.</p>
-                           <a href="javascript:;" class="mt-2 d-block">Investing</a>
-                        </div>
-                        <div class="card-footer bg-gray py-3 px-5">
-                           <div class="d-flex align-items-center">
-                              <img src="assets/img/p3.jpg" alt="" class="avatar-sm  rounded-circle mr-3">
-                              <h3 class="d-inline-block mb-0">
-                                 <a class="d-block font-size-14" href="javascript:;">Renee Mu</a>
-                              </h3>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-md-6 col-lg-4 d-flex mb-5 mb-lg-0 ">
-                     <div class="card">
-                        <div class="card-body p-5">
-                           <small class="d-block text-muted mb-2 mt-2">October 29, 2018</small>
-                           <h5>
-                              <a href="javascript:;">Securing your first-round</a>
-                           </h5>
-                           <p>Entrepreneur Joanne Halsey shares her tips for delivering an investor pitch.</p>
-                           <a href="javascript:;" class="mt-2 d-block">Finance</a>
-                        </div>
-                        <div class="card-footer bg-gray py-3 px-5">
-                           <div class="d-flex align-items-center">
-                              <img src="assets/img/p1.jpg" alt="" class="avatar-sm  rounded-circle mr-3">
-                              <h3 class="d-inline-block mb-0">
-                                 <a class="d-block font-size-14" href="javascript:;">Jeremy Spivak</a>
-                              </h3>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-md-6 col-lg-4 d-flex ">
-                     <div class="card">
-                        <div class="card-body p-5">
-                           <small class="d-block text-muted mb-2 mt-2">October 28, 2018</small>
-                           <h5>
-                              <a href="javascript:;">Leverage these growth hacks</a>
-                           </h5>
-                           <p>Entrepreneur Joanne Halsey shares her tips for delivering an investor pitch.</p>
-                           <a href="javascript:;" class="mt-2 d-block">Business</a>
-                        </div>
-                        <div class="card-footer bg-gray py-3 px-5">
-                           <div class="d-flex align-items-center">
-                              <img src="assets/img/p2.jpg" alt="" class="avatar-sm  rounded-circle mr-3">
-                              <h3 class="d-inline-block mb-0">
-                                 <a class="d-block font-size-14" href="javascript:;">David Taylor</a>
-                              </h3>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
+                   <?php
+                   if(!empty($object_news->getArrNews())){
+                       foreach ($object_news->getArrNews() as $k => $v){
+                           echo "
+                          <div class=\"col-md-6 col-lg-4 d-flex mb-5\">
+                             <div class=\"card\">
+                                <div class=\"card-body p-5\">
+                                   <small class=\"d-block text-muted mb-2 mt-2\">{$v['date']}</small>
+                                   <h5>
+                                      <a href=\"javascript:;\">{$v['name']}</a>
+                                   </h5>
+                                   <p >{$v['description']}</p>
+                                   <a href=\"javascript:;\" class=\"mt-2 d-block\">{$v['category']}</a>
+                                </div>
+                                <div class=\"card-footer bg-gray py-3 px-5\">
+                                   <div class=\"d-flex align-items-center\">
+                                      <h3 class=\"d-inline-block mb-0\">
+                                         <p class=\"d-block font-size-14 m-0\">By {$v['user']}</p>
+                                      </h3>
+                                   </div>
+                                </div>
+                             </div>
+                            </div>
+                       ";
+                       }
+                   }else{
+                       echo '<h3 style="text-align: center; margin-bottom: 10%;" class="col-md-12">No News</h3>';
+                   }
+
+                   ?>
                </div>
                <!--End row-->
                <!--End row-->
