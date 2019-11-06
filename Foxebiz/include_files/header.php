@@ -1,3 +1,7 @@
+<?php
+require_once $core_classes['category'];
+$object_category = new Category($connect);
+?>
 <header class="header">
     <div class="container ">
         <div class="floating-nav mt-lg-5 ">
@@ -21,11 +25,11 @@
                               </span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="news.php">All</a></li>
-                                <li><a class="dropdown-item" href="news.php">IT</a></li>
-                                <li><a class="dropdown-item" href="news.php">Economy</a></li>
-                                <li><a class="dropdown-item" href="news.php">City</a></li>
-                                <li><a class="dropdown-item" href="news.php">What watch</a></li>
+                                <?php
+                                foreach ($object_category->getArrCategory() as $arr => $c){
+                                    echo "<li><a class=\"dropdown-item\" href=\"news.php?id={$c['name']}\">{$c['name']}</a></li>";
+                                }
+                                ?>
                             </ul>
                         </li>
 

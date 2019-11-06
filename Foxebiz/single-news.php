@@ -175,23 +175,7 @@
                                        <li class="list-inline-item  pb-2 mr-1">
                                           <a class="btn btn-xs btn-primary btn-rounded " href="javascript:;">Investing</a>
                                        </li>
-                                       <li class="list-inline-item pb-2 mr-1">
-                                          <a class="btn btn-xs btn-primary btn-rounded" href="javascript:;">Freelance</a>
-                                       </li>
-                                       <li class="list-inline-item pb-2 mr-1">
-                                          <a class="btn btn-xs btn-primary btn-rounded" href="javascript:;">Business</a>
-                                       </li>
                                     </ul>
-                                    <hr class="my-5">
-                                    <div class="d-flex align-items-center justify-content-between mt-5">
-                                 <span class="d-block mr-3 h6 mb-0">Share:</span>
-                                 <ul class="list-inline mb-0">
-                                    <li class="list-inline-item mb-1 mb-lg-0 mr-1"><a class="social-icon" href="javascript:;"><span class="fab fa-facebook-f"></span></a></li>
-                                    <li class="list-inline-item mr-1"><a class="social-icon " href="javascript:;"><span class="fab fa-twitter"></span></a></li>
-                                    <li class="list-inline-item mr-1"><a class="social-icon " href="javascript:;"><span class="fab fa-youtube"></span></a></li>
-                                    <li class="list-inline-item"><a class="social-icon " href="javascript:;"><span class="fab fa-linkedin"></span></a></li>
-                                 </ul>
-                              </div>
                                  </article>
                               </div>
                            </div>
@@ -204,7 +188,6 @@
                            <div class="card">
                               <div class="card-body">
                                  <div class="media mb-3">
-                                    <img src="assets/img/p3.jpg" alt="" class="avatar-sm  rounded-circle mr-4">
                                     <div class="media-body">
                                        <h4 class="h6 mb-0">Melissa Wagner</h4>
                                  <small class="d-block text-muted">Amazon best author.</small>
@@ -217,37 +200,6 @@
                      </div>
                      <!--End row-->
                      <!--Row-->
-                     <div class="row">
-                        <div class=" col-lg-12  mb-5">
-                           <div class="card">
-                              <div class="card-body">
-                                 <h3 class="h4">12 comments</h3>
-                                 <ul class="comments-list list-inline mb-0">
-                                    <li class="list-inline-item">
-                                       <div class="comment">
-                                          <div class="media mb-3">
-                                             <img src="assets/img/p1.jpg" alt="" class="avatar-sm  rounded-circle img-fluid mr-4 ">
-                                             <div class="media-body">
-                                                <h4 class="d-inline-block mb-0">
-                                                   <a class="d-block h6 mb-0" href="#">David Taylor</a>
-                                                </h4>
-                                                <small class="d-block text-muted">10th January 2019</small>
-                                             </div>
-                                          </div>
-                                          <p>
-                                             Melbourne is the coastal capital of the southeastern Australian state of Victoria. At the city's centre is the modern Federation Square development, with plazas, bars, and restaurants by the Yarra River. In the Southbank area, the Melbourne Arts Precinct is the site of Arts Centre Melbourne and the National Gallery of Victoria, with Australian and indigenous art.
-                                          </p>
-                                          <a class="" href="#">
-                                          <span class="far fa-comments mr-1"></span>
-                                          Reply
-                                          </a>
-                                       </div>
-                                    </li>
-                                 </ul>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
                      <!--End row-->
                      <!--Row-->
                      <div class="row">
@@ -319,9 +271,6 @@
                         <ul class="list-unstyled mb-0">
                            <li class="py-2">
                               <div class="media">
-                                 <div class="max-width-sm mr-3">
-                                    <img class="img-fluid rounded" src="assets/img/thumb-1.jpg" alt="">
-                                 </div>
                                  <div class="media-body pr-4">
                                     <a class="text-gray h6 font-weight-normal" href="javascript:;">
                                     Securing your first round deals
@@ -331,54 +280,21 @@
                            </li>
                            <li class="py-2">
                               <div class="media">
-                                 <div class="max-width-sm mr-3">
-                                    <img class="img-fluid rounded" src="assets/img/thumb-2.jpg" alt="">
-                                 </div>
                                  <div class="media-body pr-4">
                                     <a class="text-gray h6 font-weight-normal" href="javascript:;">
-                                    10 Tips for savvy travellers 
+                                    10 Tips for savvy travellers
                                     </a>
                                  </div>
                               </div>
                            </li>
                            <li class="py-2">
                               <div class="media">
-                                 <div class="max-width-sm mr-3">
-                                    <img class="img-fluid rounded" src="assets/img/thumb-3.jpg" alt="">
-                                 </div>
                                  <div class="media-body pr-4">
                                     <a class="text-gray h6 font-weight-normal" href="javascript:;">
                                     Leverage these growth hacks
                                     </a>
                                  </div>
                               </div>
-                           </li>
-                        </ul>
-                     </div>
-                     <hr class="my-5">
-                     <div class="mb-5">
-                        <h3 class="h5 mb-4">Tags</h3>
-                        <ul class="list-inline mb-0  ">
-                           <li class="list-inline-item  pb-2 mr-1">
-                              <a class="btn btn-xs btn-primary btn-rounded " href="javascript:;">Wordpress</a>
-                           </li>
-                           <li class="list-inline-item pb-2 mr-1">
-                              <a class="btn btn-xs btn-primary btn-rounded" href="javascript:;">Web design</a>
-                           </li>
-                           <li class="list-inline-item pb-2 mr-1">
-                              <a class="btn btn-xs btn-primary btn-rounded" href="javascript:;">Branding</a>
-                           </li>
-                           <li class="list-inline-item pb-2 mr-1">
-                              <a class="btn btn-xs btn-primary btn-rounded" href="javascript:;">Marketing</a>
-                           </li>
-                           <li class="list-inline-item pb-2 mr-1">
-                              <a class="btn btn-xs btn-primary btn-rounded" href="javascript:;">HTML</a>
-                           </li>
-                           <li class="list-inline-item pb-2 mr-1">
-                              <a class="btn btn-xs btn-primary btn-rounded" href="javascript:;">Bootstrap</a>
-                           </li>
-                           <li class="list-inline-item">
-                              <a class="btn btn-xs btn-primary btn-rounded" href="javascript:;">CSS</a>
                            </li>
                         </ul>
                      </div>
@@ -416,172 +332,6 @@
             <!--End container-->
          </section>
          <!--End section-->
-         <!--Section-->
-<section class="spacer-double-lg">
-            <!--Container-->
-            <div class="container">
-               <!--Row-->
-               <div class="row justify-content-center">
-                  <div class="col-xl-9 col-lg-10">
-                     <div class=" mb-2 pb-2">
-                        <h2 class="mb-0">Subsribe to the newsletter  </h2>
-                        
-                     </div>
-                  </div>
-               </div>
-               <!--End row-->
-            </div>
-            <!--End container-->
-            <!--Container-->
-            <div class="container">
-               <!--Row-->
-               <div class="row jrow justify-content-center">
-                  <div class="col-xl-9 col-lg-10">
-                     <form>
-                        <div class="form-row">
-                           <div class="col-sm-4 mb-3">
-                              <div class=" input-group form">
-                                 <div class="input-group-prepend ">
-                                    <span class="input-group-text form-icon">
-                                    <span class="fa fa-user form-icon-inner"></span>
-                                    </span>
-                                 </div>
-                                 <input class="form-control" name="username" placeholder="Name" type="text">
-                              </div>
-                           </div>
-                           <div class="col-sm-4 mb-3 ">
-                              <div class=" input-group form">
-                                 <div class="input-group-prepend ">
-                                    <span class="input-group-text form-icon">
-                                    <span class="fa fa-envelope form-icon-inner"></span>
-                                    </span>
-                                 </div>
-                                 <input class="form-control" name="email" placeholder="Email" type="email">
-                              </div>
-                           </div>
-                           <div class="col-sm-4 mb-lg-0 mb-2">
-                              <button type="submit" class="btn btn-block btn-primary">Subscribe</button>
-                           </div>
-                        </div>
-                     </form>
-                     <p class="small text-muted mb-0">* We'll never share your email with third parties.</p>
-                  </div>
-               </div>
-               <!--End row-->
-            </div>
-            <!--End container-->
-         </section>
-         <!--End section-->
-         <!--Footer-->
-         <footer class="bg-dark spacer-double-md">
-            <!--Container-->
-            <div class="container">
-               <!--Row-->
-               <div class="row justify-content-between">
-                  <div class="col-lg-4 d-flex align-items-start flex-column">
-                     <a class="d-inline-block mb-4" href="javascript:;">
-                     <img src="assets/svg/logo-light.svg" class="footer-logo" alt="">
-                     </a>
-                     <p class="font-size-12 text-light">&copy; 2019 all rights reserved - MutationMedia. <br>A product of mutationthemes.</p>
-                  </div>
-                  <div class="col-6 col-md-4 col-lg-2 mb-0">
-                     <h3 class="text-white h6  mb-3 font-weight-600">About us</h3>
-                     <div class="list-group list-group-flush">
-                        <a class="list-group-item list-group-item-action  " href="javascript:;">About</a>
-                        <a class="list-group-item list-group-item-action" href="javascript:;">Services</a>
-                        <a class="list-group-item list-group-item-action" href="javascript:;">Hire us</a>
-                     </div>
-                  </div>
-                  <div class="col-6 col-md-4 col-lg-2 mb-0">
-                     <h3 class="text-white h6  mb-3 font-weight-600">Help &amp; Support</h3>
-                     <div class="list-group list-group-flush">
-                        <a class="list-group-item  list-group-item-action" href="javascript:;">Contact us</a>
-                        <a class="list-group-item list-group-item-action" href="javascript:;">Legals</a>
-                        <a class="list-group-item list-group-item-action " href="javascript:;">FAQ</a>
-                     </div>
-                  </div>
-                  <div class="col-6 col-md-4 col-lg-3  mb-0">
-                     <h3 class="h6 text-white mb-3 font-weight-600">Social hubs</h3>
-                     <ul class="list-inline mb-0">
-                        <li class="list-inline-item mb-2 mb-lg-0 mr-1"><a class="social-icon" href="javascript:;"><span class="fab fa-facebook-f"></span></a></li>
-                        <li class="list-inline-item mr-1"><a class="social-icon " href="javascript:;"><span class="fab fa-twitter"></span></a></li>
-                        <li class="list-inline-item mr-1"><a class="social-icon " href="javascript:;"><span class="fab fa-youtube"></span></a></li>
-                        <li class="list-inline-item"><a class="social-icon " href="javascript:;"><span class="fab fa-linkedin"></span></a></li>
-                     </ul>
-                  </div>
-               </div>
-            </div>
-         </footer>
-         <!--End footer-->
-         <!-- Modal -->
-         <div class="modal login fade" id="login" tabindex="-1" role="dialog"  aria-hidden="true">
-            <div class="modal-dialog" role="document">
-               <div class="modal-content">
-                  <div class="p-5">
-                     <form>
-                        <div id="signin">
-                           <header class="text-center mb-5">
-                              <h2 class="h4 mb-0">Login to Your Account</h2>
-                           </header>
-                           <div class="mb-3">
-                              <div class=" input-group form">
-                                 <div class="input-group-prepend ">
-                                    <span class="input-group-text form-icon">
-                                    <span class="fa fa-user form-icon-inner"></span>
-                                    </span>
-                                 </div>
-                                 <input class="form-control " name="email" placeholder="Email" type="email">
-                              </div>
-                           </div>
-                           <div class=" mb-3">
-                              <div class=" input-group form">
-                                 <div class="input-group-prepend ">
-                                    <span class="input-group-text form-icon">
-                                    <span class="fa fa-lock form-icon-inner"></span>
-                                    </span>
-                                 </div>
-                                 <input class="form-control " name="password" placeholder="Password" type="password">
-                              </div>
-                           </div>
-                           <div class="mb-3">
-                              <button type="submit" class="btn btn-block btn-primary">Login to your account</button>
-                           </div>
-                           <div class="text-center mb-3">
-                              <p class="text-muted small mb-0">
-                                 Dont have an account yet? 
-                                 <a href="#">Create an account
-                                 </a>
-                              </p>
-                              <p class="text-muted small">
-                                 Forgot your username or password? 
-                                 <a href="#">  Recover account
-                                 </a>
-                              </p>
-                           </div>
-                           <div class="text-center divider-holder my-3">
-                              <span class="divider">OR</span>
-                           </div>
-                           <div class="row mx-gutters-2 mb-4">
-                              <div class="col-sm-6 mb-2 mb-sm-0">
-                                 <button type="button" class="btn  btn-block btn-facebook">
-                                 <span class="fab fa-facebook-f mr-2"></span>
-                                 Login with Facebook
-                                 </button>
-                              </div>
-                              <div class="col-sm-6">
-                                 <button type="button" class="btn btn-block btn-twitter">
-                                 <span class="fab fa-twitter mr-2"></span>
-                                 Login with Twitter
-                                 </button>
-                              </div>
-                           </div>
-                        </div>
-                     </form>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <!-- End modal -->
          <!--To the top-->
          <a class="scroll-to-top scroll active" href="#wrapper"><span class=" fa fa-angle-up top-icon "></span></a>  
          <!-- End to the top -->

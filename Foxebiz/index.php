@@ -20,18 +20,6 @@ require_once 'config/config_require.php';
        <link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
    </head>
    <body>
-      <!-- Preloader -->
-      <div class="loader">
-         <!-- Preloader inner -->
-         <div class="loader-inner">
-            <svg width="120" height="220" viewbox="0 0 100 100" class="loading-spinner" version="1.1" xmlns="http://www.w3.org/2000/svg">
-               <circle class="spinner" cx="50" cy="50" r="21" fill="#ffffff" stroke-width="4"/>
-            </svg>
-         </div>
-         <!-- End preloader inner -->
-      </div>
-      <!-- End preloader-->
-      <!--Wrapper-->
       <div class="wrapper">
          <div class="modal login fade" id="search" tabindex="-1" role="dialog"  aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -57,6 +45,8 @@ require_once 'config/config_require.php';
          <!--Header-->
          <?php
          require_once 'include_files/header.php';
+         require_once $core_classes['TopNews'];
+         $object_topNews = new TopNews($connect);
          ?>
          <!--End header-->
          <!--Hero section-->
@@ -84,54 +74,18 @@ require_once 'config/config_require.php';
                         <!--Вывод всех новостей-->
                         <h4 class="mb-5">TOP NEWS</h4>
                         <div class="row">
-                           <div class="col-md-3 mb-5">
-                              <a href="index.html"><img src="assets/data/image-demo/270x181.png" alt="" class="breaking_img"></a>
-                              <h6 class="breaking_news_name"><a class="breaking_link" href="index.html">BREAKING NEWS</a></h6>
-                              <p class="breaking_news_data">by <b>Admin</b> 11-10-2019</p>
-                              <p class="breaking_desc"><a class="breaking_link" href="index.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a></p>
-                           </div>
-                           <div class="col-md-3 mb-5">
-                              <a href="index.html"><img src="assets/data/image-demo/270x181.png" alt="" class="breaking_img"></a>
-                              <h6 class="breaking_news_name"><a class="breaking_link">BREAKING NEWS</a></h6>
-                              <p class="breaking_news_data">by <b>Admin</b> 11-10-2019</p>
-                              <p class="breaking_desc"><a class="breaking_link" href="index.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a></p>
-                           </div>
-                           <div class="col-md-3 mb-5">
-                              <a href="index.html"><img src="assets/data/image-demo/270x181.png" alt="" class="breaking_img"></a>
-                              <h6 class="breaking_news_name"><a class="breaking_link">BREAKING NEWS</a></h6>
-                              <p class="breaking_news_data">by <b>Admin</b> 11-10-2019</p>
-                              <p class="breaking_desc"><a class="breaking_link" href="index.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a></p>
-                           </div>
-                           <div class="col-md-3 mb-5">
-                              <a href="index.html"><img src="assets/data/image-demo/270x181.png" alt="" class="breaking_img"></a>
-                              <h6 class="breaking_news_name"><a class="breaking_link">BREAKING NEWS</a></h6>
-                              <p class="breaking_news_data">by <b>Admin</b> 11-10-2019</p>
-                              <p class="breaking_desc"><a class="breaking_link" href="index.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a></p>
-                           </div>
-                           <div class="col-md-3 mb-5">
-                              <a href="index.html"><img src="assets/data/image-demo/270x181.png" alt="" class="breaking_img"></a>
-                              <h6 class="breaking_news_name"><a class="breaking_link">BREAKING NEWS</a></h6>
-                              <p class="breaking_news_data">by <b>Admin</b> 11-10-2019</p>
-                              <p class="breaking_desc"><a class="breaking_link" href="index.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a></p>
-                           </div>
-                           <div class="col-md-3 mb-5">
-                              <a href="index.html"><img src="assets/data/image-demo/270x181.png" alt="" class="breaking_img"></a>
-                              <h6 class="breaking_news_name"><a class="breaking_link">BREAKING NEWS</a></h6>
-                              <p class="breaking_news_data">by <b>Admin</b> 11-10-2019</p>
-                              <p class="breaking_desc"><a class="breaking_link" href="index.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a></p>
-                           </div>
-                           <div class="col-md-3 mb-5">
-                              <a href="index.html"><img src="assets/data/image-demo/270x181.png" alt="" class="breaking_img"></a>
-                              <h6 class="breaking_news_name"><a class="breaking_link">BREAKING NEWS</a></h6>
-                              <p class="breaking_news_data">by <b>Admin</b> 11-10-2019</p>
-                              <p class="breaking_desc"><a class="breaking_link" href="index.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a></p>
-                           </div>
-                           <div class="col-md-3 mb-5">
-                              <a href="index.html"><img src="assets/data/image-demo/270x181.png" alt="" class="breaking_img"></a>
-                              <h6 class="breaking_news_name">BREAKING NEWS</h6>
-                              <p class="breaking_news_data">by <b>Admin</b> 11-10-2019</p>
-                              <p class="breaking_desc"><a class="breaking_link" href="index.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a></p>
-                           </div>
+                            <?php
+                            foreach ($object_topNews->getArrTopNews() as $k => $v){
+                                echo "
+                                <div class=\"col-md-3 mb-5\">
+                                  <a href=\"single-news.php?id={$v['id']}\"><img src=\"{$v['img']}\" alt=\"\" class=\"breaking_img\"></a>
+                                  <h6 class=\"breaking_news_name\"><a class=\"breaking_link\" href=\"single-news.php?id={$v['id']}\">{$v['name']}</a></h6>
+                                  <p class=\"breaking_news_data\">by <b>{$v['user']}</b> {$v['date']}</p>
+                                  <p class=\"breaking_desc\"><a class=\"breaking_link\" href=\"single-news.php?id={$v['id']}\">{$v['text']}</a></p>
+                                </div>
+                                ";
+                            }
+                            ?>
                         </div>
                      </div>
                   </div>
