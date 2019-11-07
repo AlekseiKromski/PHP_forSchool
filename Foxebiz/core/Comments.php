@@ -26,8 +26,7 @@ class Comments
         $name = htmlspecialchars($data['name']);
         $text = htmlspecialchars($data['text']);
         $date = date('Y-m-d');
-        debug($date);
-        mysqli_query($connect, "INSERT INTO `comments` VALUES (null,'$name','$text','$date','$id'");
+        mysqli_query($connect, "INSERT INTO `comments` VALUES (null,'$name','$text','$date','$id')");
     }
 
     public static function redirect($id){

@@ -10,6 +10,7 @@ $core_classes = [
     'Search' => 'core/Search.php',
     'SingleNew' => 'core/SingleNew.php',
     'Comments' => 'core/Comments.php',
+    'LatestNews' => 'core/LatestNews.php',
 ];
 $core_classes_actions = [
     'addComment' => '../core/Comments.php',

@@ -31,8 +31,13 @@ if(isset($_GET['id'])){
       require_once 'include_files/header.php';
       require_once $core_classes['SingleNew'];
       require_once $core_classes['Comments'];
+      require_once $core_classes['category'];
+      require_once $core_classes['TopNews'];
+      require_once $core_classes['LatestNews'];
+      $object_category = new Category($connect);
       $object_SingleNew = new SingleNew($connect,$id);
       $object_Comments = new Comments();
+      $object_lastestNews = new LatestNews($connect);
       $object_Comments->ReadFromDB($connect,$id);
       ?>
          <!--Hero section-->
@@ -77,7 +82,7 @@ if(isset($_GET['id'])){
                                   <div class=\"card-body\">
                                      <h1 class=\"h2\">{$v['name']}</h1>
                                      <div class=\"d-lg-flex align-items-center mb-5 font-size-14\">
-                                        <span class=\"text-gray d-block  mb-1 mb-lg-0\">{$v['date']} by <a href=''>{$v['user']}</a>  </span>
+                                        <span class=\"text-gray d-block  mb-1 mb-lg-0\">{$v['date']} by <b>{$v['user']}</b>  </span>
                                      </div>
                                      <article>
                                         <p>
@@ -85,7 +90,7 @@ if(isset($_GET['id'])){
                                         </p>
                                         <ul class=\"list-inline mb-0  \">
                                            <li class=\"list-inline-item  pb-2 mr-1\">
-                                              <a class=\"btn btn-xs btn-primary btn-rounded \" href=\"javascript:;\">{$v['category']}</a>
+                                              <a class=\"btn btn-xs btn-primary btn-rounded \" href=\"news.php?id={$v['category']}\">{$v['category']}</a>
                                            </li>
                                         </ul>
                                      </article>
@@ -166,60 +171,37 @@ if(isset($_GET['id'])){
                      <div class="mb-5">
                         <h3 class="h5 mb-4">Latest Posts</h3>
                         <ul class="list-unstyled mb-0">
-                           <li class="py-2">
-                              <div class="media">
-                                 <div class="media-body pr-4">
-                                    <a class="text-gray h6 font-weight-normal" href="javascript:;">
-                                    Securing your first round deals
-                                    </a>
-                                 </div>
-                              </div>
-                           </li>
-                           <li class="py-2">
-                              <div class="media">
-                                 <div class="media-body pr-4">
-                                    <a class="text-gray h6 font-weight-normal" href="javascript:;">
-                                    10 Tips for savvy travellers
-                                    </a>
-                                 </div>
-                              </div>
-                           </li>
-                           <li class="py-2">
-                              <div class="media">
-                                 <div class="media-body pr-4">
-                                    <a class="text-gray h6 font-weight-normal" href="javascript:;">
-                                    Leverage these growth hacks
-                                    </a>
-                                 </div>
-                              </div>
-                           </li>
+                            <?php
+                            foreach ($object_lastestNews->getArrLatestNews() as $k => $v) {
+                                echo "
+                                    <li class=\"py-2\">
+                                      <div class=\"media\">
+                                         <div class=\"media-body pr-4\">
+                                            <a class=\"text-gray h6 font-weight-normal\" href=\"single-news.php?id={$v['id']}\">
+                                            {$v['name']}
+                                            </a>
+                                         </div>
+                                      </div>
+                                   </li>  
+                                  ";
+                            }
+                            ?>
                         </ul>
                      </div>
                      <hr class="my-5">
                      <div class="mb-5">
                         <h3 class="h5 mb-4">Categories</h3>
                         <ul class="list-inline mb-0 font-size-15 ">
-                           <li class="list-inline-item d-block pb-2">
-                              <a class="text-gray" href="javascript:;"><span class="fa fa-angle-right font-size-14 mr-2"></span>Wordpress</a>
-                           </li>
-                           <li class="list-inline-item d-block pb-2">
-                              <a class="text-gray" href="javascript:;"><span class="fa fa-angle-right font-size-14 mr-2"></span>Web design</a>
-                           </li>
-                           <li class="list-inline-item d-block pb-2">
-                              <a class="text-gray" href="javascript:;"><span class="fa fa-angle-right font-size-14 mr-2"></span>Branding</a>
-                           </li>
-                           <li class="list-inline-item d-block pb-2">
-                              <a class="text-gray" href="javascript:;"><span class="fa fa-angle-right font-size-14 mr-2"></span>HTML</a>
-                           </li>
-                           <li class="list-inline-item d-block pb-2">
-                              <a class="text-gray" href="#"><span class="fa fa-angle-right font-size-14 mr-2"></span>CSS</a>
-                           </li>
-                           <li class="list-inline-item d-block pb-2">
-                              <a class="text-gray" href="javascript:;"><span class="fa fa-angle-right font-size-14 mr-2"></span>Bootstrap</a>
-                           </li>
-                           <li class="list-inline-item d-block">
-                              <a class="text-gray" href="javascript:;"><span class="fa fa-angle-right font-size-14 mr-2"></span>Marketing</a>
-                           </li>
+                            <?php
+                            foreach ($object_category->getArrCategory() as $k => $v) {
+                                echo "
+                                <li class=\"list-inline-item d-block pb-2\">
+                                    <a class=\"text-gray\" href=\"news.php?id={$v['name']}\"><span class=\"fa fa-angle-right font-size-14 mr-2\"></span>{$v['name']}</a>
+                                </li>   
+                                  ";
+                            }
+                            ?>
+
                         </ul>
                      </div>
                   </div>
