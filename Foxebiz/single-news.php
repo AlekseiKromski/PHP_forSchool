@@ -11,7 +11,7 @@ if(isset($_GET['id'])){
    <head>
       <!-- Metas -->
       <meta charset="utf-8">
-      <title>Foxebiz - SHARED ON THEMELOCK.COM - - Multipurpose html template</title>
+      <title>Foxebiz - single new</title>
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <!-- Css -->
