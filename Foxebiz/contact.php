@@ -1,11 +1,12 @@
-
-
+<?php
+require_once 'config/config_require.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
    <head>
       <!-- Metas -->
       <meta charset="utf-8">
-      <title>Foxebiz - SHARED ON THEMELOCK.COM - - Multipurpose html template</title>
+      <title>Foxebiz - contact</title>
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <!-- Css -->
@@ -18,115 +19,15 @@
       <link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
    </head>
    <body>
-      <!-- Preloader -->
-      <div class="loader">
-         <!-- Preloader inner -->
-         <div class="loader-inner">
-            <svg width="120" height="220" viewbox="0 0 100 100" class="loading-spinner" version="1.1" xmlns="http://www.w3.org/2000/svg">
-               <circle class="spinner" cx="50" cy="50" r="21" fill="#ffffff" stroke-width="4"/>
-            </svg>
-         </div>
-         <!-- End preloader inner -->
-      </div>
-      <!-- End preloader-->
-      <!--Wrapper-->
-      <div class="wrapper">
-         <div class="modal login fade" id="search" tabindex="-1" role="dialog"  aria-hidden="true">
-            <div class="modal-dialog" role="document">
-               <div class="modal-content">
-               <div class="p-5">
-                     <form class="d-flex">
-                        <div class=" input-group form mr-2">
-                           <div class="input-group-prepend ">
-                              <span class="input-group-text form-icon">
-                              <span class="fa fa-search form-icon-inner"></span>
-                              </span>
-                           </div>
-                           <input class="form-control" name="search" placeholder="Search" type="text">
-                        </div>
-                        <button class="btn btn-primary" type="submit">
-                        Go
-                        </button>
-                     </form>
-                  </div>
-            </div>
-         </div>
-      </div>
-         <!--Header-->
-         <header class="header">
-            <div class="container ">
-               <div class="floating-nav mt-lg-5">
-                  <nav class="navbar navbar-expand-lg header-navbar ">
-                     <div class="navbar-brand">
-                        <a class=" navbar-brand navbar-logo" href="index.html">
-                        <img class="mb-0" src="assets/svg/logo.svg" alt="">
-                        </a>
-                     </div>
-                     <button class="navbar-toggler btn-navbar-toggler" type="button" data-toggle="collapse" data-target=".nav-menu" aria-expanded="true" aria-label="Toggle navigation">
-                     <span class="fa fa-bars"></span>
-                     </button>
-                     <div class="nav-menu collapse navbar-collapse navbar-collapse justify-content-end py-0 ">
-                        <ul class=" navbar-nav  header-navbar-nav">
-                           <li><a class=" nav-link" href="index.html">Home</a></li>
-                           <li class="dropdown">
-                              <a href="javascript:;" class="nav-link dropdown-toggle"   data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                              Pages<span class="dropdown-arrow ml-2">
-                              <span class="fa fa-angle-down dropdown-arrow-inner"></span>
-                              </span>
-                              </a>
-                              <ul class="dropdown-menu" >
-                                 <li><a class="dropdown-item" href="about.html">About</a></li>
-                                 <li><a class="dropdown-item" href="service.html">Services</a></li>
-                                 <li><a class="dropdown-item" href="comingsoon.html">Comingsoon</a></li>
-                                 <li><a class="dropdown-item" href="404.html">404</a></li>
-                                 <li><a class="dropdown-item" href="hireus.html">Hire us</a></li>
-                                 <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
-                              </ul>
-                           </li>
-                           <li class="dropdown">
-                              <a href="javascript:;" class="nav-link dropdown-toggle"   data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                              Works<span class="dropdown-arrow ml-2">
-                              <span class="fa fa-angle-down dropdown-arrow-inner"></span>
-                              </span>
-                              </a>
-                              <ul class="dropdown-menu" >
-                                 <li><a class="dropdown-item" href="portfolio-grid-2.html">Grid works 2</a></li>
-                                 <li><a class="dropdown-item" href="portfolio-grid-3.html">Grid works 3</a></li>
-                                 <li><a class="dropdown-item" href="portfolio-single.html">Single work</a></li>
-                              </ul>
-                           </li>
-                           <li class="dropdown">
-                              <a href="javascript:;" class="nav-link dropdown-toggle"   data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                              Blog<span class="dropdown-arrow ml-2">
-                              <span class="fa fa-angle-down dropdown-arrow-inner"></span>
-                              </span>
-                              </a>
-                              <ul class="dropdown-menu" >
-                                 <li><a class="dropdown-item" href="blog-full-width.html">Full Width</a></li>
-                                 <li><a class="dropdown-item" href="blog-right-sidebar.html">Right sidebar</a></li>
-                                 <li><a class="dropdown-item" href="blog-left-sidebar.html">Left sidebar</a></li>
-                                 <li><a class="dropdown-item" href="blog-single.html">Single post</a></li>
-                                 <li><a class="dropdown-item" href="blog-single-left-sidebar.html">Single left sidebar</a></li>
-                                 <li><a class="dropdown-item" href="blog-single-right-sidebar.html">Single right sidebar</a></li>
-                              </ul>
-                           </li>
-                           <li><a class="nav-link" href="contact.html">Contact</a></li>
-                           <li class="btn-nav mr-lg-3"><a class="btn btn-primary btn-sm " href="#login" data-toggle="modal" data-target="#login"><span class="fa fa-user-circle mr-1"></span>Signin</a></li>
-                           <li>
-                              <a class="btn btn-xs btn-icon btn-text-dark pb-3 pb-lg-0 pl-0 pt-0" href="#search" data-toggle="modal" data-target="#search">
-                              <span class="fa fa-search "></span>
-                              </a>
-                           </li>
-                        </ul>
-                     </div>
-                  </nav>
-               </div>
-            </div>
-         </header>
-         <!--End header-->
+
+           <?php
+           require_once 'include_files/search_modal.php';
+           require_once 'include_files/header.php';
+           ?>
+
          <!--Hero section-->
          <section class="hero" >
-            <div class="background-img gradient-overlay gradient-overlay-dark">
+            <div class="background-img gradient-overlay gradient-overlay-dark" style="background-attachment: fixed;">
                <img src="assets/bg/bg_contact.jpg" alt="" >
             </div>
             <!--Container-->
@@ -213,7 +114,18 @@
                <!--Row-->
                <div class="row justify-content-center">
                   <div class="col-lg-9">
-                     <form method="post">
+                      <?php
+                      if(isset($_GET['error'])){
+                          if($_GET['error'] == 'no_data'){
+                              echo "<h3 class=\"h4 mb-5 \" style='color: red;'>You dont enter data</h3>";
+                          }elseif ($_GET['error'] == 'no_get'){
+                              echo "<h3 class=\"h4 mb-5 \" style='color: red;'>error_no get params.</h3>";
+                          }elseif ($_GET['error'] == 'no_post'){
+                              echo "<h3 class=\"h4 mb-5 \" style='color: red;'>error_no post params.</h3>";
+                          }
+                      }
+                      ?>
+                     <form method="post" action="Action/sendContact.php">
                         <div class="row">
                            <div class="col-sm-6 mb-5">
                               <label class="form-label">

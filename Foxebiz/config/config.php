@@ -14,4 +14,5 @@ $core_classes = [
 ];
 $core_classes_actions = [
     'addComment' => '../core/Comments.php',
+    'sendContact' => '../core/Contact.php'
 ];
