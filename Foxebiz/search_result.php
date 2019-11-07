@@ -35,9 +35,8 @@
          <!--End header-->
          <!--Hero section-->
          <section class="hero" >
-            <div class="background-img gradient-overlay gradient-overlay-dark">
-               <img src="assets/bg/bd_news.jpg" alt="" >
-               <img src="assets/bg/bd_news.jpg" alt="" >
+            <div class="background-img gradient-overlay gradient-overlay-dark" style="background-attachment: fixed;">
+               <img src="assets/bg/bg_search.jpg" alt=""  >
             </div>
             <!--Container-->
             <div class="container height-30vh">
@@ -74,10 +73,10 @@
                                 <div class=\"card-body p-5\">
                                    <small class=\"d-block text-muted mb-2 mt-2\">{$v['date']}</small>
                                    <h5>
-                                      <a href=\"javascript:;\">{$v['name']}</a>
+                                      <a href=\"single-news.php?id={$v['id']}\">{$v['name']}</a>
                                    </h5>
-                                   <p >{$v['description']}</p>
-                                   <a href=\"javascript:;\" class=\"mt-2 d-block\">{$v['category']}</a>
+                                   <a href='single-news.php?id={$v['id']}' style='color: #646f79'>{$v['description']}</a>
+                                  <a href=\"news.php?id={$v['category']}\" class=\"mt-2 d-block\">{$v['category']}</a>
                                 </div>
                                 <div class=\"card-footer bg-gray py-3 px-5\">
                                    <div class=\"d-flex align-items-center\">

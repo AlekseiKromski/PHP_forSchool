@@ -8,9 +8,9 @@ class News
     public function __construct($connect,$id)
     {
         if($id == 'All'){
-            $query = mysqli_query($connect,"SELECT date,name,id,category,user,description FROM news");
+            $query = mysqli_query($connect,"SELECT date,name,id,category,user,description FROM news ORDER BY id DESC");
         }else{
-            $query = mysqli_query($connect,"SELECT date,name,id,category,user,description FROM news WHERE category = '$id'");
+            $query = mysqli_query($connect,"SELECT date,name,id,category,user,description FROM news WHERE category = '$id' ORDER BY id DESC");
         }
         $arr = [];
         while ($result = mysqli_fetch_assoc($query)){

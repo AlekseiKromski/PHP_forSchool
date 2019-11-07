@@ -42,8 +42,8 @@ if(isset($_GET['id'])){
       ?>
          <!--Hero section-->
          <section class="hero">
-            <div class="background-img gradient-overlay gradient-overlay-dark" >
-               <img src="assets/img/9.jpg" alt="">
+            <div class="background-img gradient-overlay gradient-overlay-dark" style="background-attachment: fixed;">
+               <img src="assets/bg/bg_single.jpg" alt="" ">
             </div>
             <!--Container-->
             <div class="container height-30vh">

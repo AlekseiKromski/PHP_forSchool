@@ -30,7 +30,7 @@ require_once 'config/config_require.php';
          <!--End header-->
          <!--Hero section-->
          <section class="hero" >
-            <div class="background-img gradient-overlay gradient-overlay-dark">
+            <div class="background-img gradient-overlay gradient-overlay-dark" style="background-attachment: fixed;">
                <img src="assets/bg/bg.jpg" alt="" >
             </div>
             <div class="container height-70vh">
@@ -57,7 +57,7 @@ require_once 'config/config_require.php';
                             foreach ($object_topNews->getArrTopNews() as $k => $v){
                                 echo "
                                 <div class=\"col-md-3 mb-5\">
-                                  <a href=\"single-news.php?id={$v['id']}\"><img src=\"{$v['img']}\" alt=\"\" class=\"breaking_img\"></a>
+                                  <a href=\"single-news.php?id={$v['id']}\"><div style='width: 100%; height: 181px; background-image: url(\"{$v['img']}\");background-size: cover;'></div></a>
                                   <h6 class=\"breaking_news_name\"><a class=\"breaking_link\" href=\"single-news.php?id={$v['id']}\">{$v['name']}</a></h6>
                                   <p class=\"breaking_news_data\">by <b>{$v['user']}</b> {$v['date']}</p>
                                   <p class=\"breaking_desc\"><a class=\"breaking_link\" href=\"single-news.php?id={$v['id']}\">{$v['text']}</a></p>
