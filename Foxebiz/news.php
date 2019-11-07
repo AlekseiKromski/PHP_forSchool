@@ -32,7 +32,8 @@
          <?php
          require_once 'include_files/search_modal.php';
          require_once 'include_files/header.php';
-
+         require_once $core_classes['category'];
+         $object_category = new Category($connect);
          ?>
          <!--End header-->
          <!--Hero section-->
@@ -66,30 +67,18 @@
             <div class="container">
                <!--Row-->
                <div class="row justify-content-between">
-                  <div class="col-md-5 col-lg-4 mb-4 mb-md-0">
-                     <form class="d-sm-flex align-items-center">
-                        <select class="custom-select">
-                           <option selected="" >Article by category</option>
-                           <option value="category">Business</option>
-                           <option value="category">Investing</option>
-                           <option value="category">Freelance</option>
-                           <option value="category">Finance</option>
+                  <div class="col-md-5 col-lg-4 mb-4 mb-md-0"style="margin-left: auto;">
+                     <form class="d-sm-flex align-items-center" method="get">
+                        <select class="custom-select mr-2" name="id">
+                             <?php
+                             foreach ($object_category->getArrCategory() as $k => $v){
+                                 echo "
+                                    <option selected=\"\" value='{$v['name']}'>{$v['name']}</option>
+                                 ";
+                             }
+                             ?>
                         </select>
-                     </form>
-                  </div>
-                  <div class="col-md-5 col-lg-4">
-                     <form class="d-flex">
-                        <div class=" input-group form mr-2">
-                           <div class="input-group-prepend ">
-                              <span class="input-group-text form-icon">
-                              <span class="fa fa-search form-icon-inner"></span>
-                              </span>
-                           </div>
-                           <input class="form-control" name="search" placeholder="Search" type="text">
-                        </div>
-                        <button class="btn btn-primary" type="submit">
-                        Go
-                        </button>
+                         <input type="submit" value="Go" class="btn btn-primary">
                      </form>
                   </div>
                </div>
