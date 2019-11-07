@@ -104,8 +104,8 @@
                                    <h5>
                                       <a href=\"single-news.php?id ={$v['id']}\">{$v['name']}</a>
                                    </h5>
-                                   <p >{$v['description']}</p>
-                                   <a href=\"javascript:;\" class=\"mt-2 d-block\">{$v['category']}</a>
+                                   <a href='single-news.php?id={$v['id']}' style='color: #646f79'>{$v['description']}</a>
+                                   <a href=\"news.php?id={$v['category']}\" class=\"mt-2 d-block\">{$v['category']}</a>
                                 </div>
                                 <div class=\"card-footer bg-gray py-3 px-5\">
                                    <div class=\"d-flex align-items-center\">
