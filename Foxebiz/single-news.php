@@ -1,5 +1,11 @@
-
-
+<?php
+require_once 'config/config_require.php';
+if(isset($_GET['id'])){
+    $id = $_GET['id'];
+}else{
+    header('Location: news.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -18,112 +24,17 @@
       <link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
    </head>
    <body>
-      <!-- Preloader -->
-      <div class="loader">
-         <!-- Preloader inner -->
-         <div class="loader-inner">
-            <svg width="120" height="220" viewBox="0 0 100 100" class="loading-spinner" version="1.1" xmlns="http://www.w3.org/2000/svg">
-               <circle class="spinner" cx="50" cy="50" r="21" fill="#ffffff" stroke-width="4"></circle>
-            </svg>
-         </div>
-         <!-- End preloader inner -->
-      </div>
       <!-- End preloader-->
       <!--Wrapper-->
-      <div class="wrapper">
-        <div class="modal login fade" id="search" tabindex="-1" role="dialog"  aria-hidden="true">
-            <div class="modal-dialog" role="document">
-               <div class="modal-content">
-               <div class="p-5">
-                     <form class="d-flex">
-                        <div class=" input-group form mr-2">
-                           <div class="input-group-prepend ">
-                              <span class="input-group-text form-icon">
-                              <span class="fa fa-search form-icon-inner"></span>
-                              </span>
-                           </div>
-                           <input class="form-control" name="search" placeholder="Search" type="text">
-                        </div>
-                        <button class="btn btn-primary" type="submit">
-                        Go
-                        </button>
-                     </form>
-                  </div>
-            </div>
-         </div>
-      </div>
-         <!--Header-->
-         <header class="header">
-            <div class="container ">
-               <div class="floating-nav mt-lg-5">
-                  <nav class="navbar navbar-expand-lg header-navbar ">
-                     <div class="navbar-brand">
-                        <a class=" navbar-brand navbar-logo" href="index.html">
-                        <img class="mb-0" src="assets/svg/logo.svg" alt="">
-                        </a>
-                     </div>
-                     <button class="navbar-toggler btn-navbar-toggler" type="button" data-toggle="collapse" data-target=".nav-menu" aria-expanded="true" aria-label="Toggle navigation">
-                     <span class="fa fa-bars"></span>
-                     </button>
-                     <div class="nav-menu collapse navbar-collapse navbar-collapse justify-content-end py-0 ">
-                        <ul class=" navbar-nav  header-navbar-nav">
-                           <li><a class=" nav-link" href="index.html">Home</a></li>
-                           <li class="dropdown">
-                              <a href="javascript:;" class="nav-link dropdown-toggle"   data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                              Pages<span class="dropdown-arrow ml-2">
-                              <span class="fa fa-angle-down dropdown-arrow-inner"></span>
-                              </span>
-                              </a>
-                              <ul class="dropdown-menu" >
-                                 <li><a class="dropdown-item" href="about.html">About</a></li>
-                                 <li><a class="dropdown-item" href="service.html">Services</a></li>
-                                 <li><a class="dropdown-item" href="comingsoon.html">Comingsoon</a></li>
-                                 <li><a class="dropdown-item" href="404.html">404</a></li>
-                                 <li><a class="dropdown-item" href="hireus.html">Hire us</a></li>
-                                 <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
-                              </ul>
-                           </li>
-                           <li class="dropdown">
-                              <a href="javascript:;" class="nav-link dropdown-toggle"   data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                              Works<span class="dropdown-arrow ml-2">
-                              <span class="fa fa-angle-down dropdown-arrow-inner"></span>
-                              </span>
-                              </a>
-                              <ul class="dropdown-menu" >
-                                 <li><a class="dropdown-item" href="portfolio-grid-2.html">Grid works 2</a></li>
-                                 <li><a class="dropdown-item" href="portfolio-grid-3.html">Grid works 3</a></li>
-                                 <li><a class="dropdown-item" href="portfolio-single.html">Single work</a></li>
-                              </ul>
-                           </li>
-                           <li class="dropdown">
-                              <a href="javascript:;" class="nav-link dropdown-toggle"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                              Blog<span class="dropdown-arrow ml-2">
-                              <span class="fa fa-angle-down dropdown-arrow-inner"></span>
-                              </span>
-                              </a>
-                              <ul class="dropdown-menu" >
-                                 <li><a class="dropdown-item" href="blog-full-width.html">Full Width</a></li>
-                                 <li><a class="dropdown-item" href="blog-right-sidebar.html">Right sidebar</a></li>
-                                 <li><a class="dropdown-item" href="blog-left-sidebar.html">Left sidebar</a></li>
-                                 <li><a class="dropdown-item" href="blog-single.html">Single post</a></li>
-                                 <li><a class="dropdown-item" href="blog-single-left-sidebar.html">Single left sidebar</a></li>
-                                 <li><a class="dropdown-item" href="blog-single-right-sidebar.html">Single right sidebar</a></li>
-                              </ul>
-                           </li>
-                           <li><a class="nav-link" href="contact.html">Contact</a></li>
-                           <li class="btn-nav mr-lg-3"><a class="btn btn-primary btn-sm " href="#login" data-toggle="modal" data-target="#login"><span class="fa fa-user-circle mr-1"></span>Signin</a></li>
-                           <li>
-                              <a class="btn btn-xs btn-icon btn-text-dark pb-3 pb-lg-0 pl-0 pt-0" href="#search" data-toggle="modal" data-target="#search">
-                              <span class="fa fa-search "></span>
-                              </a>
-                           </li>
-                        </ul>
-                     </div>
-                  </nav>
-               </div>
-            </div>
-         </header>
-         <!--End header-->
+      <?php
+      require_once 'include_files/search_modal.php';
+      require_once 'include_files/header.php';
+      require_once $core_classes['SingleNew'];
+      require_once $core_classes['Comments'];
+      $object_SingleNew = new SingleNew($connect,$id);
+      $object_Comments = new Comments();
+      $object_Comments->ReadFromDB($connect,$id);
+      ?>
          <!--Hero section-->
          <section class="hero">
             <div class="background-img gradient-overlay gradient-overlay-dark" >
@@ -134,11 +45,11 @@
                <!--Row-->
                <div class="row justify-content-center text-center">
                   <div class="col-12 col-md-10 col-lg-10">
-                     <h1 class="mb-3 text-white">Blog single</h1>
+                     <h1 class="mb-3 text-white"><?php $object_SingleNew::getName(); ?></h1>
                      <nav aria-label="breadcrumb">
                         <ol class="breadcrumb mb-0  justify-content-center">
                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                           <li class="breadcrumb-item active" aria-current="page">Single left sidebar</li>
+                           <li class="breadcrumb-item active" aria-current="page">post</li>
                         </ol>
                      </nav>
                   </div>
@@ -159,45 +70,56 @@
                      <div class="row">
                         <div class="col-lg-12 mb-5">
                            <div class="card">
-                              <a href="javascript:;">
-                              <img class="card-img-top" src="assets/img/6.jpg" alt="">
-                              </a>
-                              <div class="card-body">
-                                 <h1 class="h2">Leverage these growth hacks</h1>
-                                 <div class="d-lg-flex align-items-center mb-5 font-size-14">
-                                    <span class="text-gray d-block  mb-1 mb-lg-0">January 6th, 2019  </span>
-                                 </div>
-                                 <article>
-                                    <p>
-                                       Melbourne is the coastal capital of the southeastern Australian state of Victoria. At the city's centre is the modern Federation Square development, with plazas, bars, and restaurants by the Yarra River. In the Southbank area, the Melbourne Arts Precinct is the site of Arts Centre Melbourne and the National Gallery of Victoria, with Australian and indigenous art.
-                                    </p>
-                                    <ul class="list-inline mb-0  ">
-                                       <li class="list-inline-item  pb-2 mr-1">
-                                          <a class="btn btn-xs btn-primary btn-rounded " href="javascript:;">Investing</a>
-                                       </li>
-                                    </ul>
-                                 </article>
-                              </div>
+                              <?php
+                              foreach ($object_SingleNew->getArrProduct() as $k => $v) {
+                                  echo "
+                                  <img class=\"card-img-top\" src=\"{$v['img']}\" alt=\"\">
+                                  <div class=\"card-body\">
+                                     <h1 class=\"h2\">{$v['name']}</h1>
+                                     <div class=\"d-lg-flex align-items-center mb-5 font-size-14\">
+                                        <span class=\"text-gray d-block  mb-1 mb-lg-0\">{$v['date']} by <a href=''>{$v['user']}</a>  </span>
+                                     </div>
+                                     <article>
+                                        <p>
+                                           {$v['text']}
+                                        </p>
+                                        <ul class=\"list-inline mb-0  \">
+                                           <li class=\"list-inline-item  pb-2 mr-1\">
+                                              <a class=\"btn btn-xs btn-primary btn-rounded \" href=\"javascript:;\">{$v['category']}</a>
+                                           </li>
+                                        </ul>
+                                     </article>
+                                  </div>
+                                  ";
+                              }
+                              ?>
                            </div>
                         </div>
                      </div>
                      <!--End row-->
                      <!--Row-->
-                     <div class="row ">
-                        <div class=" col-lg-12 mb-5">
-                           <div class="card">
-                              <div class="card-body">
-                                 <div class="media mb-3">
-                                    <div class="media-body">
-                                       <h4 class="h6 mb-0">Melissa Wagner</h4>
-                                 <small class="d-block text-muted">Amazon best author.</small>
-                                    </div>
-                                 </div>
-                                  <p class="mb-0 small">Melbourne is the coastal capital of the southeastern Australian state of Victoria. At the city's centre is the modern Federation Square development, with plazas, bars, and restaurants by the Yarra River. In the Southbank area, the Melbourne Arts Precinct is the site of Arts Centre Melbourne and the National Gallery of Victoria, with Australian and indigenous art. </p>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
+                      <?php
+                      foreach ($object_Comments->getArrComments() as $k => $v) {
+                          echo "
+                              <div class=\"row \">
+                                <div class=\" col-lg-12 mb-5\">
+                                   <div class=\"card\">
+                                      <div class=\"card-body\">
+                                         <div class=\"media mb-3\">
+                                            <div class=\"media-body\">
+                                               <h4 class=\"h6 mb-0\">{$v['name']}</h4>
+                                               <small class=\"d-block text-muted\">{$v['date']}</small>
+                                            </div>
+                                         </div>
+                                          <p class=\"mb-0 small\">{$v['text']}</p>
+                                      </div>
+                                   </div>
+                                </div>
+                             </div>    
+                                  ";
+                      }
+                      ?>
+
                      <!--End row-->
                      <!--Row-->
                      <!--End row-->
@@ -206,41 +128,16 @@
                         <div class=" col-lg-12">
                            <div class="card">
                               <div class="card-body">
-                                 <h3 class="h4  mb-5 ">Post a comment</h3>
-                                 <form>
+                                 <h3 class="h4 mb-5 ">Post a comment</h3>
+                                 <form method="post" action="Action/AddComment.php?id=<?php echo $id;?>">
                                     <div class="row">
-                                       <div class="col-sm-6 mb-5">
+                                       <div class="col-sm-12 mb-5">
                                           <label class="form-label">
                                           Your message
                                           <span class="text-danger">*</span>
                                           </label>
                                           <div class=" input-group form">
                                              <input class="form-control " type="text" name="name" placeholder="Your full name">
-                                          </div>
-                                       </div>
-                                       <div class="col-sm-6 mb-5">
-                                          <label class="form-label">
-                                          Your Email
-                                          <span class="text-danger">*</span>
-                                          </label>
-                                          <div class=" input-group form">
-                                             <input class="form-control " type="email" name="email" placeholder="Your email">
-                                          </div>
-                                       </div>
-                                       <div class="col-sm-6 mb-5">
-                                          <label class="form-label">
-                                          Subject
-                                          </label>
-                                          <div class=" input-group form">
-                                             <input class="form-control " type="text" name="subject" placeholder="Subject">
-                                          </div>
-                                       </div>
-                                       <div class="col-sm-6 mb-5">
-                                          <label class="form-label">
-                                          Website
-                                          </label>
-                                          <div class="input-group form">
-                                             <input class="form-control " type="text" name="website" placeholder="Website">
                                           </div>
                                        </div>
                                        <div class="col-12">
@@ -254,7 +151,7 @@
                                        </div>
                                        <div class="col">
                                           <div class="">
-                                             <button type="submit" class="btn btn-primary btn-wide">Send request</button>
+                                             <button type="submit" class="btn btn-primary btn-wide">Send message</button>
                                           </div>
                                        </div>
                                     </div>
