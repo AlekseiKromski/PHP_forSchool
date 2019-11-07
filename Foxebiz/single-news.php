@@ -134,6 +134,17 @@ if(isset($_GET['id'])){
                            <div class="card">
                               <div class="card-body">
                                  <h3 class="h4 mb-5 ">Post a comment</h3>
+                                  <?php
+                                  if(isset($_GET['error'])){
+                                      if($_GET['error'] == 'no_data'){
+                                          echo "<h3 class=\"h4 mb-5 \" style='color: red;'>You dont enter data</h3>";
+                                      }elseif ($_GET['error'] == 'no_get'){
+                                          echo "<h3 class=\"h4 mb-5 \" style='color: red;'>error_no get params.</h3>";
+                                      }elseif ($_GET['error'] == 'no_post'){
+                                          echo "<h3 class=\"h4 mb-5 \" style='color: red;'>error_no post params.</h3>";
+                                      }
+                                  }
+                                  ?>
                                  <form method="post" action="Action/AddComment.php?id=<?php echo $id;?>">
                                     <div class="row">
                                        <div class="col-sm-12 mb-5">

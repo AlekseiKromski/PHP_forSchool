@@ -20,13 +20,14 @@ class Comments
     }
 
     public static function addComments($connect, $data,$id){
-        if($data['name'] == '' or $data['text'] == ''){
-            header('Location: single-news.php?error=empty_value');
+        if(empty($data['name']) or empty($data['text']) ){
+            return 'no_data';
+        }else{
+            $name = htmlspecialchars($data['name']);
+            $text = htmlspecialchars($data['text']);
+            $date = date('Y-m-d');
+            mysqli_query($connect, "INSERT INTO `comments` VALUES (null,'$name','$text','$date','$id')");
         }
-        $name = htmlspecialchars($data['name']);
-        $text = htmlspecialchars($data['text']);
-        $date = date('Y-m-d');
-        mysqli_query($connect, "INSERT INTO `comments` VALUES (null,'$name','$text','$date','$id')");
     }
 
     public static function redirect($id){
