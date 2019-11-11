@@ -160,7 +160,7 @@ if($_SESSION['rule'] != 'admin'){
 			<div class="col-xs-12">
 				<div class="box-content">
 					<h4 class="box-title">Информация</h4>
-                    <button class="btn btn-success"><a href='index.php?change=add style='color: white'>add</a></button>
+                    <button class="btn btn-success"><a href='index.php?change=add' style='color: white'>add</a></button>
                     <table class="table">
                         <thead>
                         <tr>
