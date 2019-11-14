@@ -44,6 +44,15 @@ $header_object = new Header($connect,$id);
                 </li>
                 <li>
                     <?php
+                    if($user_rule == 'admin' or $user_rule == 'Manager'){
+                        ?>
+                        <a class="waves-effect" href="<?php echo $config_name['comments'][1] ?>"><i class="menu-icon fa fa-comments"></i><span><?php echo $config_name['comments'][0]; ?></span></a>
+                        <?php
+                    }
+                    ?>
+                </li>
+                <li>
+                    <?php
                     if($user_rule == 'admin' or $user_rule == 'Writer' or $user_rule == 'Manager'){
                         ?>
                         <a class="waves-effect" href="<?php echo $config_name['move_to_site'][1] ?>"><i class="menu-icon fa fa-home"></i><span><?php echo $config_name['move_to_site'][0]; ?></span></a>

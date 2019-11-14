@@ -124,8 +124,8 @@ if($_SESSION['rule'] != 'admin'){
             }elseif($_GET['change'] == 'add'){
                 ?>
                 <div>
-                    <h4>Change news</h4>
-                    <form action="Action/newsChange.php?change=add&id=<?php echo $_GET['id']; ?>" method="POST" enctype="multipart/form-data">
+                    <h4>Add news</h4>
+                    <form action="Action/newsChange.php?change=add&id=<?php echo $_GET['id']?>" method="POST" enctype="multipart/form-data">
                         <input type="text" name="name" placeholder="name" class="form-control" style="width: 24%;; margin-right: 1%;height: 42px;"><br>
                         <select name="category" id="" class="form-control" style="width: 24%; margin-right: 1%;height: 42px;">
                             <?php
@@ -160,7 +160,7 @@ if($_SESSION['rule'] != 'admin'){
 			<div class="col-xs-12">
 				<div class="box-content">
 					<h4 class="box-title">Информация</h4>
-                    <button class="btn btn-success"><a href='index.php?change=add' style='color: white'>add</a></button>
+                    <button class="btn btn-success"><a href='index.php?change=add&id=add' style='color: white'>add</a></button>
                     <table class="table">
                         <thead>
                         <tr>
@@ -176,7 +176,6 @@ if($_SESSION['rule'] != 'admin'){
                         <tbody>
                         <?php
                         foreach ($object_news->getArrNews() as $k => $v){
-
                             echo "<tr>
                             <td>{$v['name']}</td>
                             <td>{$v['description']}</td>

@@ -67,10 +67,10 @@ $object_category = new Category($connect);
         }
         ?>
         <?php
-        if($_GET['change'] == 'add'){
+        if(isset($_GET['change'])){
                 ?>
                 <div>
-                    <h4>Change news</h4>
+                    <h4>Add category</h4>
                     <form action="Action/categoryChange.php?change=add&id=<?php echo $_GET['id']; ?>" method="POST" enctype="multipart/form-data">
                         <input type="text" name="name" placeholder="name" class="form-control" style="width: 24%;; margin-right: 1%;height: 42px;"><br>
                         <input type="submit" class="btn btn-success" value="add new">
