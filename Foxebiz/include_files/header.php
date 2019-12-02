@@ -19,7 +19,7 @@ $object_category = new Category($connect);
                         <li><a class=" nav-link" href="<?php echo $links['Home'][1];?>"><?php echo $links['Home'][0];?></a></li>
                         <li><a class="nav-link" href="<?php echo $links['Contact'][1];?>"><?php echo $links['Contact'][0];?></a></li>
                         <li class="dropdown">
-                            <a href="javascript:;" class="nav-link dropdown-toggle"   data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <a href="index.php" class="nav-link dropdown-toggle"   data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                 Category<span class="dropdown-arrow ml-2">
                               <span class="fa fa-angle-down dropdown-arrow-inner"></span>
                               </span>
