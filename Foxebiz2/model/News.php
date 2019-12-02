@@ -8,6 +8,7 @@ class News
         $query = "SELECT * FROM news LIMIT 8";
         $db = new Database();
         $arr = $db->getAll($query);
+        $db->disconnect();
         return $arr;
     }
 
@@ -19,6 +20,7 @@ class News
         }
         $db = new Database();
         $arr = $db->getAll($query);
+        $db->disconnect();
         return $arr;
     }
 }

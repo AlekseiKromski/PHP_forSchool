@@ -8,6 +8,7 @@ class Category
         $query = "SELECT * FROM category";
         $db = new Database();
         $arr = $db->getAll($query);
+        $db->disconnect();
         return $arr;
     }
 }

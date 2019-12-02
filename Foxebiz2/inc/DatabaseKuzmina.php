@@ -1,7 +1,7 @@
 <?php
 
 
-class Database2
+class DatabaseKuzmina
 {
 
     private $conn;
