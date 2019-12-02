@@ -27,7 +27,7 @@ class Database
     }
 
     public function disconnect(){
-        $this->connect = mysqli_close($this->connect);
+        mysqli_close($this->connect);
     }
 
     public function getAll($query){
