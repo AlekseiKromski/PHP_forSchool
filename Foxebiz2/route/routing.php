@@ -10,8 +10,23 @@ if($path == 'news' or $path == 'news.php') {
     } else {
         $response = Controller::News('All');
     }
+}elseif($path == 'AddComment'){
+    if(isset($_GET['id'])){
+        if(isset($_POST['name']) and isset($_POST['text'])){
+            News::setComment($_GET['id'], $_POST);
+            $response = Controller::NewsSingle($_GET['id']);
+        }else{
+            $response = Controller::NewsSingle($_GET['id']);
+        }
+    }else{
+        $response = Controller::StartSite();
+    }
 }elseif ($path == 'newsSingle' or $path == 'newsSingle.php' or $path == 'news-single.php' or $path == 'news-single'){
-    $response = 'news single';
+    if(isset($_GET['id'])){
+        $response = Controller::NewsSingle($_GET['id']);
+    }else{
+        $response = Controller::StartSite();
+    }
 }elseif($path == 'contact' or $path == 'contact.php'){
     $response = Controller::Contact();
 }elseif($path == 'search' or $path == 'search.php'){

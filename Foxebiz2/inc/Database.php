@@ -42,6 +42,10 @@ class Database
         return $arr;
     }
 
+    public function setData($query){
+        mysqli_query($this->connect,$query);
+    }
+
 
 
 }

@@ -35,8 +35,12 @@ class Controller
         include_once 'view/contact.php';
     }
 
-    public static function NewsSingle(){
-
+    public static function NewsSingle($id){
+        $array = Category::getAllCategory();
+        $arrayData = News::getNew($id);
+        $arrayData2 = News::getLastNews();
+        $arrayData3 = News::getComments($id);
+        include_once 'view/singleNews.php';
     }
 
 }
