@@ -61,7 +61,7 @@ $category = '';
 foreach ($array as $k => $v){
     $category .= "
                   <li class=\"list-inline-item d-block pb-2\">
-                    <a class=\"text-gray\" href=\"news.php?id={$v['name']}\"><span class=\"fa fa-angle-right font-size-14 mr-2\"></span>{$v['name']}</a>
+                    <a class=\"text-gray\" href=\"news.php?id={$v['name']}\"><span class=\"fa fa-angle-right font-size-14 mr-2\"></span>{$v['name']} <span style='color:red;'>({$v['num_q']})</span></a>
                   </li>             
     ";
 }

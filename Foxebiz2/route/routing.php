@@ -12,7 +12,7 @@ if($path == 'news' or $path == 'news.php') {
     }
 }elseif($path == 'AddComment'){
     if(isset($_GET['id'])){
-        if(isset($_POST['name']) and isset($_POST['text'])){
+        if(!empty($_POST['name']) and !empty($_POST['text']) and isset($_POST['name']) and isset($_POST['text'])){
             News::setComment($_GET['id'], $_POST);
             $response = Controller::NewsSingle($_GET['id']);
         }else{

@@ -36,7 +36,7 @@ class Controller
     }
 
     public static function NewsSingle($id){
-        $array = Category::getAllCategory();
+        $array = Category::getAllCategoryPlus();
         $arrayData = News::getNew($id);
         $arrayData2 = News::getLastNews();
         $arrayData3 = News::getComments($id);
