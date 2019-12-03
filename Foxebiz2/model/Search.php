@@ -6,7 +6,7 @@ class Search
 
 
     public static function searchResult($data){
-        $query = "SELECT * FROM news WHERE text LIKE '%$data%' OR name LIKE '%$data%' OR name LIKE '%$data%' OR user LIKE '%$data%' OR description LIKE '%$data%' OR category LIKE '%$data%'";
+        $query = "SELECT *, users.login, category.name as category_name FROM news JOIN users ON users.id = news.user JOIN category ON category.id = news.category WHERE text LIKE '%$data%' OR news.name LIKE '%$data%' OR login LIKE '%$data%' OR description LIKE '%$data%' OR category.name LIKE '%$data%'";
         $db = new Database();
         $arr = $db->getAll($query);
         return $arr;

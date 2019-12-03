@@ -16,6 +16,9 @@ class Database
         $this->password = '';
         $this->baseName = 'foxbiz';
         $this->connect();
+        mysqli_query($this->connect,"SET NAMES 'utf8'");
+        mysqli_query($this->connect,"SET CHARACTER SET 'utf8'");
+        mysqli_query($this->connect,"SET SESSION collation_connection = 'utf8_general_ci'");
     }
 
     public function __destruct(){

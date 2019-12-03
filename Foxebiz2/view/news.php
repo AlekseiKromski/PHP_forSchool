@@ -10,12 +10,12 @@ foreach ($arrayData as $k => $v) {
                                       <a href=\"single-news.php?id={$v['id']}\">{$v['name']}</a>
                                    </h5>
                                    <a href='single-news.php?id={$v['id']}' style='color: #646f79'>{$v['description']}</a>
-                                   <a href=\"news.php?id={$v['category']}\" class=\"mt-2 d-block\">{$v['category']}</a>
+                                   <a href=\"news.php?id={$v['category_name']}\" class=\"mt-2 d-block\">{$v['category_name']}</a>
                                 </div>
                                 <div class=\"card-footer bg-gray py-3 px-5\">
                                    <div class=\"d-flex align-items-center\">
                                       <h3 class=\"d-inline-block mb-0\">
-                                         <p class=\"d-block font-size-14 m-0\">By {$v['user']}</p>
+                                         <p class=\"d-block font-size-14 m-0\">By {$v['login']}</p>
                                       </h3>
                                    </div>
                                 </div>

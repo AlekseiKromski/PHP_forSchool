@@ -35,4 +35,8 @@ class Controller
         include_once 'view/contact.php';
     }
 
+    public static function NewsSingle(){
+
+    }
+
 }

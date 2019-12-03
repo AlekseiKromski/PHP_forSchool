@@ -10,6 +10,8 @@ if($path == 'news' or $path == 'news.php') {
     } else {
         $response = Controller::News('All');
     }
+}elseif ($path == 'newsSingle' or $path == 'newsSingle.php' or $path == 'news-single.php' or $path == 'news-single'){
+    $response = 'news single';
 }elseif($path == 'contact' or $path == 'contact.php'){
     $response = Controller::Contact();
 }elseif($path == 'search' or $path == 'search.php'){
