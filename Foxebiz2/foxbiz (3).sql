@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Дек 03 2019 г., 10:20
+-- Время создания: Дек 09 2019 г., 11:53
 -- Версия сервера: 10.1.33-MariaDB
 -- Версия PHP: 7.2.6
 
@@ -43,7 +43,7 @@ INSERT INTO `category` (`id`, `name`) VALUES
 (4, 'City'),
 (8, 'Policy'),
 (10, 'Sport'),
-(11, 'test');
+(14, 'Test');
 
 -- --------------------------------------------------------
 
@@ -66,7 +66,13 @@ CREATE TABLE `comments` (
 INSERT INTO `comments` (`id`, `name`, `text`, `date`, `post_id`) VALUES
 (9, 'test', 'test', '2019-12-03', 28),
 (10, 'sdfsdfdfs', 'dsfdssfdsfdsf', '2019-12-03', 28),
-(12, 'asdasdsad', 'sad', '2019-12-03', 26);
+(12, 'asdasdsad', 'sad', '2019-12-03', 26),
+(13, 'provname', 'test comment', '2019-12-09', 25),
+(14, 'asd', '123', '2019-12-09', 25),
+(15, 'asd', '123', '2019-12-09', 25),
+(16, 'asd', '123', '2019-12-09', 25),
+(17, 'asd', 'asd', '2019-12-09', 26),
+(18, 'asd', 'asd', '2019-12-09', 26);
 
 -- --------------------------------------------------------
 
@@ -165,13 +171,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT для таблицы `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT для таблицы `news`

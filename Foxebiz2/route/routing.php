@@ -14,9 +14,9 @@ if($path == 'news' or $path == 'news.php') {
     if(isset($_GET['id'])){
         if(!empty($_POST['name']) and !empty($_POST['text']) and isset($_POST['name']) and isset($_POST['text'])){
             News::setComment($_GET['id'], $_POST);
-            $response = Controller::NewsSingle($_GET['id']);
+            header("Location: newsSingle?id={$_GET['id']}");
         }else{
-            $response = Controller::NewsSingle($_GET['id']);
+            header("Location: newsSingle?id={$_GET['id']}");
         }
     }else{
         $response = Controller::StartSite();

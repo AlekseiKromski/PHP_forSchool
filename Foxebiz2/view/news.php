@@ -7,9 +7,9 @@ foreach ($arrayData as $k => $v) {
                                 <div class=\"card-body p-5\">
                                    <small class=\"d-block text-muted mb-2 mt-2\">{$v['date']}</small>
                                    <h5>
-                                      <a href=\"single-news.php?id={$v['id']}\">{$v['name']}</a>
+                                      <a href=\"newsSingle.php?id={$v['id']}\">{$v['name']}</a>
                                    </h5>
-                                   <a href='single-news.php?id={$v['id']}' style='color: #646f79'>{$v['description']}</a>
+                                   <a href='newsSingle.php?id={$v['id']}' style='color: #646f79'>{$v['description']}</a>
                                    <a href=\"news.php?id={$v['category_name']}\" class=\"mt-2 d-block\">{$v['category_name']}</a>
                                 </div>
                                 <div class=\"card-footer bg-gray py-3 px-5\">
