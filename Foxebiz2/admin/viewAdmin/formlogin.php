@@ -33,7 +33,7 @@ if(isset($_SESSION['userId'])){
                                 <input class="form-control" placeholder="E-mail" name="email" type="text" required autofocus>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" placeholder="Password" name="password" type="password" value="" required>
+                                <input class="form-control" placeholder="Password" name="password" type="password" required>
                             </div>
                             <input class="btn btn-lg btn-success btn-block" type="submit" value="login" name="btnlogin">
                             <p style="color: red;">

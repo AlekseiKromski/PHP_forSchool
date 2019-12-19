@@ -12,20 +12,30 @@
 <body>
 <div class="container">
     <!-- -->
+    <?php
+        if(isset($_SESSION['userId']) && $_SESSION['sessionId']){
+    ?>
     <div class="header clearfix">
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <?php
-                    echo "<h4><a href='../'  target=_blank>Выход</a>";
-                    echo "&#187 <a href='categoryAdmin'>News categries</a>";
-                    echo "&#187 <a href='newsAdmin'>News List</a>";
-                    echo "</h4>";
+
+                    echo "<ul>
+                        <li role='button'>{$_SESSION['username']}<a href='layout' style='display: inline'>Выйти</a></li>
+                    </ul>";
+                    if(isset($_SESSION['rule']) && $_SESSION['status'] == "admin")  {
+                        echo "<h4><a href='../'  target=_blank>Выход</a>";
+                        echo "&#187 <a href='categoryAdmin'>News categries</a>";
+                        echo "&#187 <a href='newsAdmin'>News List</a>";
+                        echo "</h4>";
+                    }
                 ?>
 
             </div>
         </nav>
     </div>
     <!-- -->
+    <?php}?>
     <div id="content" style="padding-top:20px; ">
         <?php
         if(isset($content)){
