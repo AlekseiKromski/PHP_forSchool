@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Дек 09 2019 г., 11:53
--- Версия сервера: 10.1.33-MariaDB
+-- Время создания: Дек 19 2019 г., 09:23
+-- Версия сервера: 10.4.6-MariaDB
 -- Версия PHP: 7.2.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -59,21 +59,6 @@ CREATE TABLE `comments` (
   `post_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `comments`
---
-
-INSERT INTO `comments` (`id`, `name`, `text`, `date`, `post_id`) VALUES
-(9, 'test', 'test', '2019-12-03', 28),
-(10, 'sdfsdfdfs', 'dsfdssfdsfdsf', '2019-12-03', 28),
-(12, 'asdasdsad', 'sad', '2019-12-03', 26),
-(13, 'provname', 'test comment', '2019-12-09', 25),
-(14, 'asd', '123', '2019-12-09', 25),
-(15, 'asd', '123', '2019-12-09', 25),
-(16, 'asd', '123', '2019-12-09', 25),
-(17, 'asd', 'asd', '2019-12-09', 26),
-(18, 'asd', 'asd', '2019-12-09', 26);
-
 -- --------------------------------------------------------
 
 --
@@ -116,21 +101,21 @@ INSERT INTO `news` (`id`, `name`, `text`, `date`, `category`, `img`, `user`, `de
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `login` varchar(25) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `rule` varchar(50) NOT NULL
+  `rule` varchar(50) NOT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `pass` varchar(255) DEFAULT NULL,
+  `username` varchar(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `users`
 --
 
-INSERT INTO `users` (`id`, `login`, `password`, `rule`) VALUES
-(1, 'admin', 'b80616638827bf06fe38c761c511a4e9', 'admin'),
-(5, 'AlekseiKromski', '37478d48fb8be9f590bf83c4e03b80cd', 'Writer'),
-(8, 'MihailKent', '37478d48fb8be9f590bf83c4e03b80cd', 'Manager'),
-(10, 'login', '99b1930ac7478d7ae1868daf9b355a8d', 'Manager'),
-(11, 'login1', '99647548a3eec84f7fffa4ca8041e570', 'Writer');
+INSERT INTO `users` (`id`, `password`, `rule`, `email`, `pass`, `username`) VALUES
+(1, '$2y$12$pxB2ofiiNZkxObmbBvBOyegwCjHCVFYhapjiSsdYXUaJ9Z1IH6pQW', 'admin', 'admin@mail.ru', 'admin', '123456'),
+(5, '37478d48fb8be9f590bf83c4e03b80cd', 'Writer', 'AleskeiKromski@mail.ru', 'AleskiKromski', 'Aleksei'),
+(8, '37478d48fb8be9f590bf83c4e03b80cd', 'Manager', 'MihailKent@mail.ru', 'MihailKent', 'Mihail');
 
 --
 -- Индексы сохранённых таблиц
@@ -161,7 +146,8 @@ ALTER TABLE `news`
 -- Индексы таблицы `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- AUTO_INCREMENT для сохранённых таблиц
@@ -177,7 +163,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT для таблицы `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT для таблицы `news`
