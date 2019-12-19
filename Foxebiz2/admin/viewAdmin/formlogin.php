@@ -35,7 +35,7 @@ if(isset($_SESSION['userId'])){
                             <div class="form-group">
                                 <input class="form-control" placeholder="Password" name="password" type="password" value="" required>
                             </div>
-                            <input class="btn btn-lg btn-success btn-block" type="submit" value="btnlogin">
+                            <input class="btn btn-lg btn-success btn-block" type="submit" value="login" name="btnlogin">
                             <p style="color: red;">
                                 <?php
                                     if(isset($_SESSION['errorString'])){
