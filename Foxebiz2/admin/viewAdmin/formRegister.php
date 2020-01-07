@@ -2,7 +2,6 @@
 if(isset($_SESSION['userId'])){
     header('Location: login');
 }
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -24,27 +23,24 @@ if(isset($_SESSION['userId'])){
         <div class="col-md-4 col-md-offset-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Please sign in</h3>
+                    <h3 class="panel-title">Please register</h3>
                 </div>
                 <div class="panel-body">
-                    <form accept-charset="UTF-8" role="form" method="post" action="login">
+                    <form accept-charset="UTF-8" role="form" method="post" action="registerAnswer">
                         <fieldset>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Name" name="name" type="text" required autofocus>
+                            </div>
                             <div class="form-group">
                                 <input class="form-control" placeholder="E-mail" name="email" type="text" required autofocus>
                             </div>
                             <div class="form-group">
                                 <input class="form-control" placeholder="Password" name="password" type="password" required>
                             </div>
-                            <input class="btn btn-lg btn-success btn-block" type="submit" value="login" name="btnlogin">
-                            <p style="color: red;">
-                                <?php
-                                    if(isset($_SESSION['errorString'])){
-                                        echo $_SESSION['errorString'];
-                                        unset($_SESSION['errorString']);//Удаляем данные
-                                    }
-                                ?>
-                            </p>
-                            <a href="registerForm">register</a>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Confim password" name="confim" type="password" required>
+                            </div>
+                            <input class="btn btn-lg btn-danger btn-block" type="submit" value="register" name="save">
                         </fieldset>
                     </form>
                 </div>

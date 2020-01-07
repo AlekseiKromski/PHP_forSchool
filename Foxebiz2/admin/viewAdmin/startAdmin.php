@@ -5,5 +5,5 @@
 </article>
 <?php
 $content = ob_get_clean();
-include "layout/layout.php";
+include "viewAdmin/layout/layout.php";
 ?>

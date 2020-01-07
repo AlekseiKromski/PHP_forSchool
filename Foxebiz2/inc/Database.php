@@ -42,8 +42,15 @@ class Database
         return $arr;
     }
 
+    public function getOne($query){
+        $query = mysqli_query($this->connect,$query);
+        $result = mysqli_fetch_assoc($query);
+        return $result;
+    }
+
     public function setData($query){
         mysqli_query($this->connect,$query);
+        return true;
     }
 
 

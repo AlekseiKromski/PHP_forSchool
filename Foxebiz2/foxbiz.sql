@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.1
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
--- Хост: 127.0.0.1
--- Время создания: Дек 19 2019 г., 09:23
--- Версия сервера: 10.4.6-MariaDB
--- Версия PHP: 7.2.6
+-- Host: 127.0.0.1
+-- Generation Time: Jan 07, 2020 at 01:23 PM
+-- Server version: 10.4.10-MariaDB
+-- PHP Version: 7.1.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `foxbiz`
+-- Database: `foxbiz`
 --
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `category`
+-- Table structure for table `category`
 --
 
 CREATE TABLE `category` (
@@ -34,7 +34,7 @@ CREATE TABLE `category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `category`
+-- Dumping data for table `category`
 --
 
 INSERT INTO `category` (`id`, `name`) VALUES
@@ -48,7 +48,7 @@ INSERT INTO `category` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `comments`
+-- Table structure for table `comments`
 --
 
 CREATE TABLE `comments` (
@@ -59,10 +59,17 @@ CREATE TABLE `comments` (
   `post_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `comments`
+--
+
+INSERT INTO `comments` (`id`, `name`, `text`, `date`, `post_id`) VALUES
+(20, 'test', 'test\r\n', '2020-01-07', 25);
+
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `news`
+-- Table structure for table `news`
 --
 
 CREATE TABLE `news` (
@@ -77,7 +84,7 @@ CREATE TABLE `news` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `news`
+-- Dumping data for table `news`
 --
 
 INSERT INTO `news` (`id`, `name`, `text`, `date`, `category`, `img`, `user`, `description`) VALUES
@@ -96,7 +103,7 @@ INSERT INTO `news` (`id`, `name`, `text`, `date`, `category`, `img`, `user`, `de
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -105,37 +112,42 @@ CREATE TABLE `users` (
   `rule` varchar(50) NOT NULL,
   `email` varchar(255) DEFAULT NULL,
   `pass` varchar(255) DEFAULT NULL,
-  `username` varchar(11) NOT NULL
+  `username` varchar(11) NOT NULL,
+  `login` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `users`
+-- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `password`, `rule`, `email`, `pass`, `username`) VALUES
-(1, '$2y$12$pxB2ofiiNZkxObmbBvBOyegwCjHCVFYhapjiSsdYXUaJ9Z1IH6pQW', 'admin', 'admin@mail.ru', 'admin', '123456'),
-(5, '37478d48fb8be9f590bf83c4e03b80cd', 'Writer', 'AleskeiKromski@mail.ru', 'AleskiKromski', 'Aleksei'),
-(8, '37478d48fb8be9f590bf83c4e03b80cd', 'Manager', 'MihailKent@mail.ru', 'MihailKent', 'Mihail');
+INSERT INTO `users` (`id`, `password`, `rule`, `email`, `pass`, `username`, `login`) VALUES
+(1, '$2y$12$pxB2ofiiNZkxObmbBvBOyegwCjHCVFYhapjiSsdYXUaJ9Z1IH6pQW', 'admin', 'admin@mail.ru', '123456', '123456', 'admin'),
+(5, '', 'Writer', 'AleskeiKromski@mail.ru', 'AleskiKromski', 'Aleksei', 'AlekseiKromski'),
+(8, '37478d48fb8be9f590bf83c4e03b80cd', 'Manager', 'MihailKent@mail.ru', 'MihailKent', 'Mihail', 'MihailKent'),
+(56, '$2y$12$pxB2ofiiNZkxObmbBvBOyegwCjHCVFYhapjiSsdYXUaJ9Z1IH6pQW', 'user', 'admin1@mail.ru', NULL, 'asd', 'asd'),
+(57, '1234567', 'user', 'test@tets.ru', NULL, 'test', 'test'),
+(58, '$2y$10$5.ARYaaVKbiXfjFyspIfQeoMTvrJwYEPAq.mUfu3XNLuXeSFO4Vsi', 'user', 'admin2@mail.ru', NULL, 'admin1', 'admin1'),
+(59, '$2y$10$4ES73CHRJITmR5WtDp66K.0SqnubEL.3q4ryAX1DwjStuWPjVAjna', 'user', 'AleskeiKromski2@mail.ru', NULL, 'asd', 'asd');
 
 --
--- Индексы сохранённых таблиц
+-- Indexes for dumped tables
 --
 
 --
--- Индексы таблицы `category`
+-- Indexes for table `category`
 --
 ALTER TABLE `category`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `comments`
+-- Indexes for table `comments`
 --
 ALTER TABLE `comments`
   ADD PRIMARY KEY (`id`),
   ADD KEY `post_id` (`post_id`);
 
 --
--- Индексы таблицы `news`
+-- Indexes for table `news`
 --
 ALTER TABLE `news`
   ADD PRIMARY KEY (`id`),
@@ -143,52 +155,52 @@ ALTER TABLE `news`
   ADD KEY `user` (`user`);
 
 --
--- Индексы таблицы `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- AUTO_INCREMENT для сохранённых таблиц
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT для таблицы `category`
+-- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT для таблицы `comments`
+-- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT для таблицы `news`
+-- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
--- AUTO_INCREMENT для таблицы `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
--- Ограничения внешнего ключа сохраненных таблиц
+-- Constraints for dumped tables
 --
 
 --
--- Ограничения внешнего ключа таблицы `comments`
+-- Constraints for table `comments`
 --
 ALTER TABLE `comments`
   ADD CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`post_id`) REFERENCES `news` (`id`);
 
 --
--- Ограничения внешнего ключа таблицы `news`
+-- Constraints for table `news`
 --
 ALTER TABLE `news`
   ADD CONSTRAINT `news_ibfk_1` FOREIGN KEY (`category`) REFERENCES `category` (`id`),

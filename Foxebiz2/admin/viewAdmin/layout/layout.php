@@ -21,9 +21,9 @@
                 <?php
 
                     echo "<ul>
-                        <li role='button'>{$_SESSION['username']}<a href='layout' style='display: inline'>Выйти</a></li>
+                        <li role='button'>{$_SESSION['username']}<a href='logout' style='display: inline'> Выйти</a></li>
                     </ul>";
-                    if(isset($_SESSION['rule']) && $_SESSION['status'] == "admin")  {
+                    if(isset($_SESSION['rule']))  {
                         echo "<h4><a href='../'  target=_blank>Выход</a>";
                         echo "&#187 <a href='categoryAdmin'>News categries</a>";
                         echo "&#187 <a href='newsAdmin'>News List</a>";
@@ -35,7 +35,7 @@
         </nav>
     </div>
     <!-- -->
-    <?php}?>
+    <?php } ?>
     <div id="content" style="padding-top:20px; ">
         <?php
         if(isset($content)){
