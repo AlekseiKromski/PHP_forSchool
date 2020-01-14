@@ -46,4 +46,11 @@ class modelAdmin
         $arr = $db->getAll($query);
         return $arr;
     }
+
+    public static function getCategoryList(){
+        $query = "SELECT * FROM category ORDER BY category.name ASC";
+        $db = new Database();
+        $arr = $db->getAll($query);
+        return $arr;
+    }
 }

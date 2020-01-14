@@ -5,7 +5,7 @@ class News
 {
 
     public static function getTopNews(){
-        $query = "SELECT news.*, users.login FROM news JOIN users ON `users`.`id` = news.user LIMIT 8";
+        $query = "SELECT news.*, users.login FROM news JOIN users ON `users`.`id` = news.user ORDER BY news.id DESC LIMIT 8";
         $db = new Database();
         $arr = $db->getAll($query);
         return $arr;
