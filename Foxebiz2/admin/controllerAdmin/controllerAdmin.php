@@ -37,4 +37,11 @@ class controllerAdmin
         include_once('viewAdmin/answerRegister.php');
     }
 
+    //List news
+
+    public static function NewsList(){
+        $arr = modelAdmin::getNewsList();
+        include_once 'viewAdmin/newsList.php';
+    }
+
 }

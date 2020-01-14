@@ -13,6 +13,18 @@ if($path == "" OR $path == 'index'){
     $response = controllerAdmin::registerForm();
 }elseif($path == 'registerAnswer'){
     $response = controllerAdmin::registerUser();
-}else{
+}
+//List news
+elseif ($path == 'newsAdmin'){
+    $response = controllerAdmin::NewsList();
+}
+elseif ($path == 'newsAddResult'){
+    $response = controllerAdminNews::newsAddResult();
+}
+elseif ($path == 'newsAdd'){
+    $response = controllerAdminNews::newsAddForm();
+
+}
+else{
     $response = controllerAdmin::error404();
 }

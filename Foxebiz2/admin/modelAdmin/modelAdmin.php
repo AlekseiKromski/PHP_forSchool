@@ -40,4 +40,10 @@ class modelAdmin
         return ;
     }
 
+    public static function getNewsList(){
+        $query = "SELECT news.*, category.name AS category_name, users.login FROM news,category,users WHERE news.category = category.id AND news.user = users.id ORDER BY news.id DESC";
+        $db = new Database();
+        $arr = $db->getAll($query);
+        return $arr;
+    }
 }
