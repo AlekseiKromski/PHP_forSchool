@@ -5,12 +5,12 @@
     <div style="margin: 20px;">
         <a class="btn btn-primary" href="newsAdd" role="button">Добавить новость</a>
     </div>
-    <div class="col-md-11">
+    <div class="col">
         <table class="table table-bordered table-responsive">
             <tr>
-                <th width="10%">ID</th>
-                <th width="70%">Header news</th>
-                <th width="20%">ID</th>
+                <th width="">ID</th>
+                <th width="">Header news</th>
+                <th width="">ID</th>
             </tr>
             <?php
             foreach ($arr as $item) {

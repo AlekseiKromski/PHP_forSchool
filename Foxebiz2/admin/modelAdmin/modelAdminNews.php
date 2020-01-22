@@ -35,4 +35,55 @@ class modelAdminNews
         return $test;
 
     }
+
+    public static function getNewsDetail($id){
+        $query = "SELECT news.*, category.name AS categoryName,users.login FROM news, category, users WHERE news.category = category.id AND news.user = users.id AND news.id = '$id'";
+        $db = new Database();
+        $item = $db->getOne($query);
+        return $item;
+    }
+
+    public static function getNewsEditResult($id){
+        $test = false;
+        if(isset($_POST['save'])){
+            if(isset($_POST['title']) && isset($_POST['text']) && isset($_POST['idCategory']) ){
+                $title = $_POST['title'];
+                $text = $_POST['text'];
+                $idCategory = $_POST['idCategory'];
+                $image = $_FILES['picture']['name'];
+                $desc = mb_strimwidth($text,0,30,"...");
+                if($image!=""){
+                    $uploaddir = '../assets/post_img/';
+                    $uploadfile = $uploaddir . basename($_FILES['picture']['name']);
+                    copy($_FILES['picture']['tmp_name'], $uploadfile);
+                    $image = 'assets/post_img/' . $image;
+                }
+                if($image == ""){
+                    $sql="UPDATE `news` SET `name`='$title',`text`='$text',`category`='$idCategory',`description`='$desc' WHERE id = '$id'";
+                }else{
+                    $sql = "UPDATE `news` SET `name`='$title',`text`='$text',`category`='$idCategory',`img`='$image',`description`='$desc' WHERE id = '$id'";
+                }
+                $db = new Database();
+                $item = $db->setData($sql);
+                if($item == true){
+                    $test = true;
+                }
+            }
+        }
+        return $test;
+    }
+
+    public static function getNewsDelete($id){
+        $test = false;
+        if(isset($_POST['save'])){
+            $sql = "DELETE FROM news WHERE news.id = '$id'";
+            $db = new Database();
+            $item = $db->setData($sql);
+            if($item == true){
+                $test == true;
+            }
+        }
+        return $test;
+    }
+
 }

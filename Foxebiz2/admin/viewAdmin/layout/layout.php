@@ -25,7 +25,7 @@
                     </ul>";
                     if(isset($_SESSION['rule']))  {
                         echo "<a href='categoryAdmin'>News categries</a>";
-                        echo "&#187 <a href='newsAdmin'>News List</a>";
+                        echo "<a href='newsAdmin'>News List</a>";
                         echo "</h4>";
                     }
                 ?>
