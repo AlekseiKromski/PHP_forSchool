@@ -42,13 +42,12 @@
                                     <?php
                                     foreach ($arr as $item){
                                         ?>
-                                        <option value="<?php echo $item['id']?>">
-                                            <?php
-                                            if($item['id'] == $detail['categoryName']){
-                                                echo "selected - ";
-                                            }
-                                            echo $item['name'];
-                                            ?>
+                                        <option value="<?php echo $item['id']?>"
+                                        <?php
+                                        if($item['id'] == $detail['category']){
+                                            echo "selected";
+                                        }
+                                        echo">{$item['name']}";?>
                                         </option>
                                         <?php
                                     }
